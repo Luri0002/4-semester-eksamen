@@ -48,13 +48,13 @@ import Heading from "../components/Heading.astro";
 <!-- top bar slut-->
 
 <!-- content start-->
-<div class="mt-10 gap-20 grid grid-cols-6 lg:grid-cols-12 items-end">
+<div class="mt-10 lg:mt-20 grid grid-cols-6 lg:grid-cols-12 items-end">
 
 <!-- left side start-->
-<div class="order-2 lg:order-1 col-start-1 col-span-6 gap-5 lg:col-span-4 lg:gap-10">
+<div class="order-2 lg:order-1 col-start-1 col-span-6 lg:col-span-4">
 
 <Text teksttype="konsultativ" font="display" color="dark600" stylingclasses="mb-2.5">Our craft takes time</Text>
-<Text teksttype="manchet" font="display" color="dark600" stylingclasses="mb-2.5">Right now, our olives are ripening on the branch:</Text>
+<Text teksttype="manchet" font="heading" color="dark600" stylingclasses="mb-2.5">Right now, our olives are ripening on the branch:</Text>
 <img src="/images/fullscreen_menubillede.webp" alt="olive branch"/>
 
 </div>
@@ -64,20 +64,48 @@ import Heading from "../components/Heading.astro";
 <nav class="order-1 lg:order-2 col-start-3 col-span-4 lg:col-start-8 lg:col-span-6">
 <ul class="text-right">
 
+<!-- Our Olive Oil -->
 <li>
-<a href="/our_oliveoil"> <Heading htmlheading="h1" size="large" font="display" stylingclasses="mb-5 lg:mb-10">Our Olive Oil</Heading></a>
+<a href="/our_oliveoil" class="group inline-block"> 
+    <div class="relative inline-block mb-5 lg:mb-10">
+    <Heading htmlheading="h1" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Our Olive Oil</Heading>
+    <!-- underline svg -->
+    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+    </div>
+</a>
 </li>
 
+<!-- Buy/Subscribe -->
 <li>
-<a href="/buy"><Heading htmlheading="h2" size="large" font="display" stylingclasses="mb-5 lg:mb-10">Buy/Subscribe</Heading></a>
+<a href="/buy" class="group inline-block">
+<div class="relative inline-block mb-5 lg:mb-10">
+<Heading htmlheading="h2" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Buy/Subscribe</Heading>
+<!-- underline svg -->
+    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+</div>
+</a>
 </li>
 
+<!-- Explore Our Farm -->
 <li>
-<a href="/explore"><Heading htmlheading="h3" size="large" font="display" stylingclasses="mb-5 lg:mb-10">Explore Our Farm</Heading></a>
+<a href="/explore" class="group inline-block">
+<div class="relative inline-block mb-5 lg:mb-10">   
+<Heading htmlheading="h3" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Explore Our Farm</Heading>
+<!-- underline svg -->
+    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+</div>
+</a>
 </li>
 
+<!-- My Abdeljalil -->
 <li>
-<a href="/"><Heading htmlheading="h4" size="large" font="display">My Abdeljalil</Heading></a>
+<a href="/" class="group inline-block">
+<div class="relative inline-block mb-5 lg:mb-10">  
+<Heading htmlheading="h4" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">My Abdeljalil</Heading>
+<!-- underline svg -->
+    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+</div>
+</a>
 </li>
 
 </ul>
