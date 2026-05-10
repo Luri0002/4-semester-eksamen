@@ -1,28 +1,92 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
+import Text from "../components/Text.astro";
+import Heading from "../components/Heading.astro";
+
 ---
-<header x-data="{ showmenu: false }" class="" >
-    <div id="navbar" class="container mx-auto p-4 flex flex-row justify-between items-center">
-        <div id="logo" class="">
-            <a href="#" class="font-display text-4xl">Astro-Tailwind starter - udvidet udgave E25</a>
-        </div>
-        <nav id="desktopmenu" class="hidden lg:block">
-            <ul class="flex flex-row gap-4">
-                <li class=""><a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}>Forside</a></li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-                <li class=""><a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "italic font-bold" : "italic"}>Komponentbibliotek</a></li>
-            </ul>
-        </nav>
-        <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-</svg>
+
+<header x-data="{ showMenu: false }" class="w-full bg-transparent">
+
+<!-- nav bar start -->
+<div class="flex items-center justify-between px-5 py-5 md:px-10 md:py-10">
+
+<!-- logo start -->
+<a href="/" class="group relative block w-24 h-24">
+  
+<!-- default logo -->
+<img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"/>
+
+<!-- hover logo -->
+<img src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+
+</a>
+<!-- logo slut -->
+
+<!-- menu button -->
+<button @click="showMenu = true" class="w-24">
+<img src="/images/menu_open.svg" alt="Open menu"/>
 </button>
-    </div>
-    <nav id="mobilmenu" class="flex flex-col content-center" 
-    x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-        <ul class="border-t-2 border-b-2 border-black">
-            <li class="text-center py-2"><a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}>Forside</a></li>
-            <li class="text-center py-2"><a href="/komponentbibliotek/" class={currentPath === "komponentbibliotek/" ? "italic font-bold" : "italic"}>Komponentbibliotek</a></li>
-        </ul>
-    </nav>
+
+</div>
+<!-- nav bar slut -->
+
+<!-- fullscreen menu start -->
+<div x-show="showMenu" class="fixed inset-0 z-50 bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
+
+<!-- top bar start-->
+<div class="flex items-center justify-between">
+
+<!-- logo -->
+<img src="/images/logo.svg" alt="default logo" class="w-24 h-24"/>
+
+<!-- close button -->
+<button @click="showMenu = false" class="w-24">
+<img src="/images/menu_close.svg" alt="Close menu"/>
+</button>
+
+</div>
+<!-- top bar slut-->
+
+<!-- content start-->
+<div class="mt-10 gap-20 grid grid-cols-6 lg:grid-cols-12 items-end">
+
+<!-- left side start-->
+<div class="order-2 lg:order-1 col-start-1 col-span-6 gap-5 lg:col-span-4 lg:gap-10">
+
+<Text teksttype="konsultativ" font="display" color="dark600" stylingclasses="mb-2.5">Our craft takes time</Text>
+<Text teksttype="manchet" font="display" color="dark600" stylingclasses="mb-2.5">Right now, our olives are ripening on the branch:</Text>
+<img src="/images/fullscreen_menubillede.webp" alt="olive branch"/>
+
+</div>
+<!-- left side slut-->
+
+<!-- menu links start -->
+<nav class="order-1 lg:order-2 col-start-3 col-span-4 lg:col-start-8 lg:col-span-6">
+<ul class="text-right">
+
+<li>
+<a href="/our_oliveoil"> <Heading htmlheading="h1" size="large" font="display" stylingclasses="mb-5 lg:mb-10">Our Olive Oil</Heading></a>
+</li>
+
+<li>
+<a href="/buy"><Heading htmlheading="h2" size="large" font="display" stylingclasses="mb-5 lg:mb-10">Buy/Subscribe</Heading></a>
+</li>
+
+<li>
+<a href="/explore"><Heading htmlheading="h3" size="large" font="display" stylingclasses="mb-5 lg:mb-10">Explore Our Farm</Heading></a>
+</li>
+
+<li>
+<a href="/"><Heading htmlheading="h4" size="large" font="display">My Abdeljalil</Heading></a>
+</li>
+
+</ul>
+</nav>
+<!-- menu links slut -->
+
+</div>
+<!-- content slut-->
+
+</div>
+<!-- fullscreen menu slut -->
 </header>
