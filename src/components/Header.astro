@@ -2,6 +2,8 @@
 const pathname = new URL(Astro.request.url).pathname;
 import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
+import { Image } from "astro:assets";
+import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp";
 
 ---
 
@@ -11,7 +13,7 @@ import Heading from "../components/Heading.astro";
 <div class="flex items-center justify-between px-5 py-5 md:px-10 md:py-10">
 
 <!-- logo start -->
-<a href="/" class="group relative block w-24 h-24">
+<a href="/" class="group relative block w-24 h-24 lg:w-32 lg:h-32">
   
 <!-- default logo -->
 <img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"/>
@@ -23,7 +25,7 @@ import Heading from "../components/Heading.astro";
 <!-- logo slut -->
 
 <!-- menu button -->
-<button @click="showMenu = true" class="w-24">
+<button @click="showMenu = true" class="w-24 lg:w-32">
 <img src="/images/menu_open.svg" alt="Open menu"/>
 </button>
 
@@ -36,11 +38,20 @@ import Heading from "../components/Heading.astro";
 <!-- top bar start-->
 <div class="flex items-center justify-between">
 
-<!-- logo -->
-<img src="/images/logo.svg" alt="default logo" class="w-24 h-24"/>
+<!-- logo start -->
+<a href="/" class="group relative block w-24 h-24 lg:w-32 lg:h-32">
+  
+<!-- default logo -->
+<img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"/>
+
+<!-- hover logo -->
+<img src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+
+</a>
+<!-- logo slut -->
 
 <!-- close button -->
-<button @click="showMenu = false" class="w-24">
+<button @click="showMenu = false" class="w-24 lg:w-32">
 <img src="/images/menu_close.svg" alt="Close menu"/>
 </button>
 
@@ -55,7 +66,7 @@ import Heading from "../components/Heading.astro";
 
 <Text teksttype="konsultativ" font="display" color="dark600" stylingclasses="mb-2.5">Our craft takes time</Text>
 <Text teksttype="manchet" font="heading" color="dark600" stylingclasses="mb-2.5">Right now, our olives are ripening on the branch:</Text>
-<img src="/images/fullscreen_menubillede.webp" alt="olive branch"/>
+<Image src={fullscreen_menubillede} alt="Picture of an olive branch" />
 
 </div>
 <!-- left side slut-->
@@ -100,7 +111,7 @@ import Heading from "../components/Heading.astro";
 <!-- My Abdeljalil -->
 <li>
 <a href="/" class="group inline-block">
-<div class="relative inline-block mb-5 lg:mb-10">  
+<div class="relative inline-block">  
 <Heading htmlheading="h4" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">My Abdeljalil</Heading>
 <!-- underline svg -->
     <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
