@@ -1,15 +1,40 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
+import { Image } from "astro:assets";
+import ouroliveoil_herobillede from "../assets/images/ouroliveoil_herobillede.webp";
 ---
 
 <MainLayout title="Our Olive Oil">
-  <main class="container mx-auto p-4">
-    <Heading htmlheading="h1">Our Olive Oil</Heading>
-    <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
-  </main>
+<main class="grid grid-cols-6 px-5 lg:px-10 lg:grid-cols-12">
+<!-- first section start -->
+
+<!-- headings start -->
+<div class="col-start-1 col-span-6 lg:col-span-9 gap-2.5"> 
+<Heading htmlheading="h1" size="small" font="display">Our Olive Oil</Heading>
+<Heading htmlheading="h2" size="medium" font="heading">Our Extra Virgin Olive Oil is a testament to quality, with this year's harvest aiming for an acidity level of less than 0.4% </Heading>
+</div>
+<!-- headings slut -->
+
+<!-- text-picture start -->
+<div class="py-5 lg:py-10 col-start-1 col-span-6 lg:col-start-4 lg:col-span-4"> 
+<Text stylingclasses="mb-5 lg:mb-10">This estimation is based on our extensive experience in producing olive oil from our family's farm and distributing it to family and friends inside and outside Morocco. The consistency of our process and the health of our olive trees contribute to this result. Our previous harvests have undergone rigorous testing, confirming our ability to  produce an oil that far exceeds the strict criteria for extra virgin  which requires an acidity level of 0.8% or less.</Text>
+<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" />
+</div>
+<!-- text-picture slut -->
+
+<!-- text-button start -->
+<div class="lg:py-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end">
+<Text stylingclasses="mb-5 lg:mb-10">This low acidity level is a key indicator of olive oil quality. It measures  the amount of free fatty acids present in the oil, expressed as a percentage of oleic acid. Contrary to its name, this acidity does not affect the oil's taste. A lower acidity indicates that the oil was produced from healthy, undamaged olives with minimal processing time. When the olive fruits are damaged or processing is delayed, fatty acids are released, which increases the acidity. 
+Our careful production process ensures a low acidity, reflecting our commitment to quality.</Text>
+<Button>Shop the Harvest</Button>
+</div>
+<!-- text-button slut -->
+
+<!-- first section slut -->
+    
+</main>
 </MainLayout>
