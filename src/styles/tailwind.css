@@ -30,8 +30,9 @@
   --color-light: #f6f6ef;
 
   /* Dark */
-  --color-dark: #680100;
+  --color-dark-500: #680100;
   --color-dark-600: #580001;
+  --color-dark-700: #490101;
   --color-dark-900: #280100;
 
   /*Typografi */

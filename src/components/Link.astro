@@ -3,16 +3,16 @@
 const { href = "#", target = "_self", variant = "secondary" } = Astro.props;
 
 //Definer den styling (Tailwind classes, der gør sig gældende for alle links
-const linkStyling = "text-base md:text-lg py-3 px-2";
+const linkStyling = "text-base md:text-lg mb-2";
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
 const variantClasses = {
-  secondary: "inline-block text-secondary-400",
+  secondary: "inline-block font-paragraph text-secondary-400",
 };
 ---
 
 <!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
-<a href={href} target={target} class:list={["inline-flex items-center gap-1 md:gap-2.5 hover:md:gap-7 transition-all duration-600", linkStyling, variantClasses[variant]]}
+<a href={href} target={target} class:list={["inline-flex items-center gap-2 md:gap-2.5 hover:md:gap-7 transition-all duration-600", linkStyling, variantClasses[variant]]}
   ><slot />
   <svg class="w-5 h-3 md:w-7 md:h-5" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M19.5303 6.05328C19.8232 5.76039 19.8232 5.28551 19.5303 4.99262L14.7574 0.219648C14.4645 -0.0732449 13.9896 -0.0732449 13.6967 0.219648C13.4038 0.512542 13.4038 0.987415 13.6967 1.28031L17.9393 5.52295L13.6967 9.76559C13.4038 10.0585 13.4038 10.5334 13.6967 10.8263C13.9896 11.1191 14.4645 11.1191 14.7574 10.8263L19.5303 6.05328ZM0 5.52295V6.27295H19V5.52295V4.77295H0V5.52295Z" fill="currentColor"></path>
