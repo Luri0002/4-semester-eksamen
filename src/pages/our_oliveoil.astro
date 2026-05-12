@@ -5,12 +5,16 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import { Image } from "astro:assets";
 import ouroliveoil_herobillede from "../assets/images/ouroliveoil_herobillede.webp";
+import full_olive from "../assets/images/oliven.svg";
+import half_olive from "../assets/images/half_olive.svg";
+import stroke_olive from "../assets/images/stroke_olive.svg";
+import Vs_card from "../components/Vs_card.astro";
 ---
 
 <MainLayout title="Our Olive Oil">
-<main class="grid grid-cols-6 px-5 lg:px-10 lg:grid-cols-12">
+<main>
 <!-- first section start -->
-
+<section class="grid grid-cols-6 px-5 lg:px-10 lg:grid-cols-12"> 
 <!-- headings start -->
 <div class="col-start-1 col-span-6 lg:col-span-9 gap-2.5"> 
 <Heading htmlheading="h1" size="small" font="display">Our Olive Oil</Heading>
@@ -21,7 +25,7 @@ import ouroliveoil_herobillede from "../assets/images/ouroliveoil_herobillede.we
 <!-- text-picture start -->
 <div class="py-5 lg:py-10 col-start-1 col-span-6 lg:col-start-4 lg:col-span-4"> 
 <Text stylingclasses="mb-5 lg:mb-10">This estimation is based on our extensive experience in producing olive oil from our family's farm and distributing it to family and friends inside and outside Morocco. The consistency of our process and the health of our olive trees contribute to this result. Our previous harvests have undergone rigorous testing, confirming our ability to  produce an oil that far exceeds the strict criteria for extra virgin  which requires an acidity level of 0.8% or less.</Text>
-<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" />
+<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" class="lg:mb-20" />
 </div>
 <!-- text-picture slut -->
 
@@ -29,11 +33,43 @@ import ouroliveoil_herobillede from "../assets/images/ouroliveoil_herobillede.we
 <div class="lg:py-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end">
 <Text stylingclasses="mb-5 lg:mb-10">This low acidity level is a key indicator of olive oil quality. It measures  the amount of free fatty acids present in the oil, expressed as a percentage of oleic acid. Contrary to its name, this acidity does not affect the oil's taste. A lower acidity indicates that the oil was produced from healthy, undamaged olives with minimal processing time. When the olive fruits are damaged or processing is delayed, fatty acids are released, which increases the acidity. 
 Our careful production process ensures a low acidity, reflecting our commitment to quality.</Text>
-<Button>Shop the Harvest</Button>
+<Button stylingclasses="mb-10 lg:mb-20">Shop the Harvest</Button>
 </div>
 <!-- text-button slut -->
-
+</section>
 <!-- first section slut -->
     
+<!-- comparison section start -->
+<section class="bg-secondary-900">
+<!-- overskrifter start -->
+<div class="py-10 px-5 lg:py-20 lg:px-10 col-start-1 col-span-5"> 
+<Heading htmlheading="h3" size="small" font="display" color="secondary">Not all olive oil is the same</Heading>
+<Heading htmlheading="h4" size="medium" color="secondary">Abdeljalil vs. others</Heading>
+</div>
+<!-- overskrifter slut -->
+
+<!-- vs cards start -->
+<div class="flex flex-row gap-20"> 
+<Vs_card
+  image={ouroliveoil_herobillede}
+  heading="supermarket olive oil"
+  olives={[full_olive, half_olive, half_olive, stroke_olive]}
+/>
+
+</div>
+<!-- vs cards slut -->
+
+
+</section>
+
+<!-- comparison section slut -->
+
+
+
+
+
+
+
+
 </main>
 </MainLayout>
