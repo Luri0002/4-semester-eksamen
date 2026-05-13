@@ -8,7 +8,9 @@ import ouroliveoil_herobillede from "../assets/images/ouroliveoil_herobillede.we
 import full_olive from "../assets/images/oliven.svg";
 import half_olive from "../assets/images/half_olive.svg";
 import stroke_olive from "../assets/images/stroke_olive.svg";
-import Vs_card from "../components/Vs_card.astro";
+import bottle from "../assets/images/oliveoil_bottle.webp";
+import tin from "../assets/images/oliveoil_tin.webp";
+import VsCard from "../components/Vs_card.astro";
 ---
 
 <MainLayout title="Our Olive Oil">
@@ -31,7 +33,7 @@ import Vs_card from "../components/Vs_card.astro";
 
 <!-- text-button start -->
 <div class="lg:py-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end">
-<Text stylingclasses="mb-5 lg:mb-10">This low acidity level is a key indicator of olive oil quality. It measures  the amount of free fatty acids present in the oil, expressed as a percentage of oleic acid. Contrary to its name, this acidity does not affect the oil's taste. A lower acidity indicates that the oil was produced from healthy, undamaged olives with minimal processing time. When the olive fruits are damaged or processing is delayed, fatty acids are released, which increases the acidity. 
+<Text stylingclasses="mb-5 lg:mb-10">This low acidity level is a key indicator of olive oil quality. It measures the amount of free fatty acids present in the oil, expressed as a percentage of oleic acid. Contrary to its name, this acidity does not affect the oil's taste. A lower acidity indicates that the oil was produced from healthy, undamaged olives with minimal processing time. When the olive fruits are damaged or processing is delayed, fatty acids are released, which increases the acidity. 
 Our careful production process ensures a low acidity, reflecting our commitment to quality.</Text>
 <Button stylingclasses="mb-10 lg:mb-20">Shop the Harvest</Button>
 </div>
@@ -40,28 +42,70 @@ Our careful production process ensures a low acidity, reflecting our commitment 
 <!-- first section slut -->
     
 <!-- comparison section start -->
-<section class="bg-secondary-900">
-<!-- overskrifter start -->
-<div class="py-10 px-5 lg:py-20 lg:px-10 col-start-1 col-span-5"> 
-<Heading htmlheading="h3" size="small" font="display" color="secondary">Not all olive oil is the same</Heading>
-<Heading htmlheading="h4" size="medium" color="secondary">Abdeljalil vs. others</Heading>
+<section class="bg-secondary-900 py-10 lg:py-20 overflow-hidden">
+
+  <!-- overskrifter start -->
+  <div class="px-5 lg:px-10 mb-5 lg:mb-10"> 
+    <Heading htmlheading="h3" size="small" font="display" color="secondary">
+      Not all olive oil is the same
+    </Heading>
+
+    <Heading htmlheading="h4" size="medium" color="secondary">
+      Abdeljalil vs. others
+    </Heading>
+  </div>
+  <!-- overskrifter slut -->
+
+  <!-- mobile + desktop comparison wrapper -->
+  <div class="relative px-5 lg:px-10">
+
+    <!-- scroll area -->
+    <div class="overflow-x-auto lg:overflow-visible">
+
+      <!-- grid -->
+      <div class="grid grid-cols-[160px_repeat(3,220px)] lg:grid-cols-4 items-center gap-10 min-w-max lg:min-w-0">
+
+        <!-- labels start -->
+<div class="sticky left-0 z-30 self-stretch w-45 bg-secondary-900 pr-6 lg:static lg:w-auto lg:bg-transparent lg:z-auto">
+
+  <!-- labels content -->
+  <div class="flex flex-col gap-14 mt-80 lg:mt-90 relative z-10">
+    <Text teksttype="manchet" font="heading" color="secondary">Extra virgin</Text>
+    <Text teksttype="manchet" font="heading" color="secondary">Ethically sourced</Text>
+    <Text teksttype="manchet" font="heading" color="secondary">Harvesting tradition</Text>
+    <Text teksttype="manchet" font="heading" color="secondary">Regenerative ecosystem</Text>
+  </div>
+
 </div>
-<!-- overskrifter slut -->
+<!-- labels slut -->
 
-<!-- vs cards start -->
-<div class="flex flex-row gap-20"> 
-<Vs_card
-  image={ouroliveoil_herobillede}
-  heading="supermarket olive oil"
-  olives={[full_olive, half_olive, half_olive, stroke_olive]}
-/>
+        <!-- vs cards start -->
+        <VsCard
+          image={bottle}
+          heading="supermarket olive oil"
+          olives={[half_olive, stroke_olive, stroke_olive, stroke_olive]}
+        />
 
-</div>
-<!-- vs cards slut -->
+        <div class="bg-primary-500 rounded-4xl pb-8">
+          <VsCard
+            image={tin}
+            heading="Abdeljalil olive oil"
+            olives={[full_olive, full_olive, full_olive, full_olive]}
+          />
+        </div>
 
+        <VsCard
+          image={bottle}
+          heading="Luxury olive oil"
+          olives={[full_olive, half_olive, half_olive, half_olive]}
+        />
+        <!-- vs cards slut -->
+
+      </div>
+    </div>
+  </div>
 
 </section>
-
 <!-- comparison section slut -->
 
 
