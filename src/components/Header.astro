@@ -4,128 +4,110 @@ import Text from "../components/Text.astro";
 import Heading from "../components/Heading.astro";
 import { Image } from "astro:assets";
 import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp";
-
 ---
 
-<header x-data="{ showMenu: false }" class="w-full bg-transparent">
+<header x-data="{ showMenu: false }" class="fixed top-0 left-0 z-50 w-full bg-transparent">
+  <!-- nav bar start -->
+  <div class="flex items-center justify-between px-5 py-5 md:px-10 md:py-10">
+    <!-- logo start -->
+    <a href="/" class="group relative block w-24 h-24 lg:w-32 lg:h-32">
+      <!-- default logo -->
+      <img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0" />
 
-<!-- nav bar start -->
-<div class="flex items-center justify-between px-5 py-5 md:px-10 md:py-10">
+      <!-- hover logo -->
+      <img src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    </a>
+    <!-- logo slut -->
 
-<!-- logo start -->
-<a href="/" class="group relative block w-24 h-24 lg:w-32 lg:h-32">
-  
-<!-- default logo -->
-<img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"/>
+    <!-- menu button -->
+    <button @click="showMenu = true" class="w-24 lg:w-32">
+      <img src="/images/menu_open.svg" alt="Open menu" />
+    </button>
+  </div>
+  <!-- nav bar slut -->
 
-<!-- hover logo -->
-<img src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+  <!-- fullscreen menu start -->
+  <div x-show="showMenu" class="fixed inset-0 z-50 bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
+    <!-- top bar start-->
+    <div class="flex items-center justify-between">
+      <!-- logo start -->
+      <a href="/" class="group relative block w-24 h-24 lg:w-32 lg:h-32">
+        <!-- default logo -->
+        <img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0" />
 
-</a>
-<!-- logo slut -->
+        <!-- hover logo -->
+        <img src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      </a>
+      <!-- logo slut -->
 
-<!-- menu button -->
-<button @click="showMenu = true" class="w-24 lg:w-32">
-<img src="/images/menu_open.svg" alt="Open menu"/>
-</button>
-
-</div>
-<!-- nav bar slut -->
-
-<!-- fullscreen menu start -->
-<div x-show="showMenu" class="fixed inset-0 z-50 bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
-
-<!-- top bar start-->
-<div class="flex items-center justify-between">
-
-<!-- logo start -->
-<a href="/" class="group relative block w-24 h-24 lg:w-32 lg:h-32">
-  
-<!-- default logo -->
-<img src="/images/logo.svg" alt="Logo" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"/>
-
-<!-- hover logo -->
-<img src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
-
-</a>
-<!-- logo slut -->
-
-<!-- close button -->
-<button @click="showMenu = false" class="w-24 lg:w-32">
-<img src="/images/menu_close.svg" alt="Close menu"/>
-</button>
-
-</div>
-<!-- top bar slut-->
-
-<!-- content start-->
-<div class="mt-10 lg:mt-20 grid grid-cols-6 lg:grid-cols-12 items-end">
-
-<!-- left side start-->
-<div class="order-2 lg:order-1 col-start-1 col-span-6 lg:col-span-4">
-
-<Text teksttype="konsultativ" font="display" color="dark600" stylingclasses="mb-2.5">Our craft takes time</Text>
-<Text teksttype="manchet" font="heading" color="dark600" stylingclasses="mb-2.5">Right now, our olives are ripening on the branch:</Text>
-<Image src={fullscreen_menubillede} alt="Picture of an olive branch" />
-
-</div>
-<!-- left side slut-->
-
-<!-- menu links start -->
-<nav class="order-1 lg:order-2 col-start-3 col-span-4 lg:col-start-8 lg:col-span-6">
-<ul class="text-right">
-
-<!-- Our Olive Oil -->
-<li>
-<a href="/our_oliveoil" class="group inline-block"> 
-    <div class="relative inline-block mb-5 lg:mb-10">
-    <Heading htmlheading="h1" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Our Olive Oil</Heading>
-    <!-- underline svg -->
-    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
+      <!-- close button -->
+      <button @click="showMenu = false" class="w-24 lg:w-32">
+        <img src="/images/menu_close.svg" alt="Close menu" />
+      </button>
     </div>
-</a>
-</li>
+    <!-- top bar slut-->
 
-<!-- Buy/Subscribe -->
-<li>
-<a href="/buy" class="group inline-block">
-<div class="relative inline-block mb-5 lg:mb-10">
-<Heading htmlheading="h2" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Buy/Subscribe</Heading>
-<!-- underline svg -->
-    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
-</div>
-</a>
-</li>
+    <!-- content start-->
+    <div class="mt-10 lg:mt-20 grid grid-cols-6 lg:grid-cols-12 items-end">
+      <!-- left side start-->
+      <div class="order-2 lg:order-1 col-start-1 col-span-6 lg:col-span-4">
+        <Text teksttype="konsultativ" font="display" color="dark600" stylingclasses="mb-2.5">Our craft takes time</Text>
+        <Text teksttype="manchet" font="heading" color="dark600" stylingclasses="mb-2.5">Right now, our olives are ripening on the branch:</Text>
+        <Image src={fullscreen_menubillede} alt="Picture of an olive branch" />
+      </div>
+      <!-- left side slut-->
 
-<!-- Explore Our Farm -->
-<li>
-<a href="/explore" class="group inline-block">
-<div class="relative inline-block mb-5 lg:mb-10">   
-<Heading htmlheading="h3" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Explore Our Farm</Heading>
-<!-- underline svg -->
-    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
-</div>
-</a>
-</li>
+      <!-- menu links start -->
+      <nav class="order-1 lg:order-2 col-start-3 col-span-4 lg:col-start-8 lg:col-span-6">
+        <ul class="text-right">
+          <!-- Our Olive Oil -->
+          <li>
+            <a href="/our_oliveoil" class="group inline-block">
+              <div class="relative inline-block mb-5 lg:mb-10">
+                <Heading htmlheading="h1" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Our Olive Oil</Heading>
+                <!-- underline svg -->
+                <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+            </a>
+          </li>
 
-<!-- My Abdeljalil -->
-<li>
-<a href="/" class="group inline-block">
-<div class="relative inline-block">  
-<Heading htmlheading="h4" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">My Abdeljalil</Heading>
-<!-- underline svg -->
-    <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
-</div>
-</a>
-</li>
+          <!-- Buy/Subscribe -->
+          <li>
+            <a href="/buy" class="group inline-block">
+              <div class="relative inline-block mb-5 lg:mb-10">
+                <Heading htmlheading="h2" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Buy/Subscribe</Heading>
+                <!-- underline svg -->
+                <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+            </a>
+          </li>
 
-</ul>
-</nav>
-<!-- menu links slut -->
+          <!-- Explore Our Farm -->
+          <li>
+            <a href="/explore" class="group inline-block">
+              <div class="relative inline-block mb-5 lg:mb-10">
+                <Heading htmlheading="h3" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">Explore Our Farm</Heading>
+                <!-- underline svg -->
+                <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+            </a>
+          </li>
 
-</div>
-<!-- content slut-->
-
-</div>
-<!-- fullscreen menu slut -->
+          <!-- My Abdeljalil -->
+          <li>
+            <a href="/" class="group inline-block">
+              <div class="relative inline-block">
+                <Heading htmlheading="h4" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">My Abdeljalil</Heading>
+                <!-- underline svg -->
+                <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-0 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- menu links slut -->
+    </div>
+    <!-- content slut-->
+  </div>
+  <!-- fullscreen menu slut -->
 </header>

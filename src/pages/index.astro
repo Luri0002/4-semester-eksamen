@@ -1,15 +1,67 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
+import herobillede1 from "../assets/images/herobillede1.webp";
+import herobillede2 from "../assets/images/herobillede2.webp";
+import herobillede3 from "../assets/images/herobillede3.webp";
 ---
 
 <MainLayout title="Homepage">
-  <main class="container mx-auto p-4">
-    <Heading htmlheading="h1">When quality has a face</Heading>
-    <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
+  <main class="">
+    <!-- hero start -->
+    <section class="relative aspect-2/3 md:aspect-video lg:aspect-2/1 w-full overflow-hidden">
+      <!-- hero billeder start -->
+      <!-- Billede 1 (Aktivt fra start) -->
+      <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-100 z-0">
+        <Image src={herobillede1} alt="mangler mangler her" class="object-cover w-full h-full" />
+      </div>
+
+      <!-- Billede 2 (Skjult) -->
+      <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
+        <Image src={herobillede2} alt="mangler mangler her" class="object-cover w-full h-full" />
+      </div>
+
+      <!-- Billede 3 (Skjult) -->
+      <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
+        <Image src={herobillede3} alt="mangler mangler her" class="object-cover w-full h-full" />
+      </div>
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-secondary-900/40 z-10"></div>
+
+      <!-- grid med copy og cta start -->
+      <div class="relative z-20 grid grid-cols-6 px-5 gap-2.5 auto-rows-min h-full content-end md:items-center lg:items-start pb-5 md:px-10 md:grid-cols-12 md:gap-5">
+        <div class="col-start-1 col-span-6 md:col-span-8">
+          <Heading size="xlarge" color="primary200">MOROCCAN EXTRA VIRGIN OLIVE OIL</Heading>
+        </div>
+        <div class="col-start-1 col-span-6 flex flex-col items-start gap-4 md:col-start-9 md:col-span-4 lg:gap-5">
+          <Text teksttype="manchet" font="heading" color="primary200">An authentic taste of Morocco. Hand-picked by our family, our Haouzia olives are pressed fresh at their peak harvest once a year, bringing you an exclusive, seasonal extra virgin olive oil.</Text>
+          <Button variant="primary" href="/products">Shop the Harvest</Button>
+        </div>
+      </div>
+      <!-- copy og cta slut -->
+    </section>
+    <!-- hero slut -->
   </main>
+
+  <script>
+    // Script til hero billeder start
+    const slides = document.querySelectorAll(".hero-image");
+    let current = 0;
+
+    setInterval(() => {
+      // Skjul det nuværende billede
+      slides[current].classList.replace("opacity-100", "opacity-0");
+
+      // Gå til næste (eller start forfra)
+      current = (current + 1) % slides.length;
+
+      // Vis det nye billede
+      slides[current].classList.replace("opacity-0", "opacity-100");
+    }, 3000); // Skift hver 3 sekund
+    // Script til hero billeder slut
+  </script>
 </MainLayout>
