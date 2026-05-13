@@ -1,0 +1,41 @@
+---
+const { title, content, name = "faq-accordion" } = Astro.props;
+import Text from "./Text.astro";
+---
+
+<div class="faq-item collapse collapse-plus text-dark-600 rounded-none border-b md:border-b-2 border-dark-600 cursor-pointer last:border-b-0">
+  <input
+    type="checkbox"
+    aria-labelledby={title}
+    name={name}
+    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+  />
+
+  <div class="collapse-title" id={title}>
+    <Text teksttype="manchet" font="heading" color="dark600">
+      {title}
+    </Text>
+  </div>
+
+  <div class="collapse-content md:max-w-1/2">
+    <Text color="dark600">
+      {content}
+    </Text>
+  </div>
+</div>
+
+<style>
+  .faq-item .collapse-title::after {
+    font-size: 3rem;
+    line-height: 1;
+    font-family: var(--font-display);
+    top: 0.3rem;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 768px) {
+    .faq-item .collapse-title::after {
+      font-size: 4rem;
+    }
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import Heading from "../components/Heading.astro";
+import { Image } from "astro:assets";
+import hero_billede1 from "../assets/images/hero_billede1.webp";
+import FaqItem from "../components/FaqItem.astro";
+---
+<!-- FAQ start-->
+<section class="bg-secondary-500 py-10 lg:py-20">
+  <div class="px-5 lg:px-10 grid grid-cols-6 md:grid-cols-12">
+
+    <!-- venstre side start-->
+    <div class="col-span-6 md:col-span-4">
+      <div class="mb-2.5">
+        <Heading htmlheading="h4" size="small" font="display">FAQ</Heading>
+        <Heading htmlheading="h5" size="medium">All the answers you need</Heading>
+      </div>
+
+      <Image src={hero_billede1} alt="Picture of an olive grove" class="hidden md:block mt-5"/>
+    </div>
+    <!-- venstre side slut-->
+
+    <!-- højre side / accordion start-->
+    <div class="col-span-6 md:col-start-7 border md:border-2 border-dark-600 rounded-4xl overflow-hidden">
+      <FaqItem title="How many bottles can I reserve?" content="Up to 4 bottles per person to keep it fair. If inventory remains, we'll open larger orders later." />
+      <FaqItem title="Where is the olive oil from?" content="From our family grove in the Haouz (Marrakech), Morocco. Single-origin Haouzia variety." />
+      <FaqItem title="What makes your oil special?" content="We target an acidity level below 0.4% (vs. 0.8% max for extra virgin), thanks to early harvest and rapid cold extraction. This results in a polyphenol-rich oil with a vivid, peppery finish." />
+      <FaqItem title="How is payment handled?" content="Once stock is in Germany, we'll send you an invoice with PayPal QR and IBAN. You can choose either method to complete payment." />
+      <FaqItem title="Do you ship outside Germany?" content="We currently deliver across the European Union and Switzerland, so you can enjoy our products wherever you are in Europe." />
+      <FaqItem title="How should I store the oil?" content="Keep it cool, dark, and sealed. Avoid heat and direct light. Best enjoyed within 12-18 months of harvest." />
+      <FaqItem title="How do I contact you?" content="Email us at info@abdeljaliloliveoil.com."/>
+    </div>
+    <!-- højre side / accordion slut-->
+     
+    <!-- mobil billede nederst -->
+    <Image src={hero_billede1} alt="Picture of an olive grove" class="col-span-6 mt-5 md:hidden"/>
+
+  </div>
+</section>
+<!-- FAQ slut-->
