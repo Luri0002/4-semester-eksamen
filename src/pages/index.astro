@@ -7,6 +7,10 @@ import Button from "../components/Button.astro";
 import herobillede1 from "../assets/images/hero_billede1.webp";
 import herobillede2 from "../assets/images/hero_billede2.webp";
 import herobillede3 from "../assets/images/hero_billede3.webp";
+import gif1 from "../assets/images/moroccan-sun.gif";
+import gif2 from "../assets/images/rich-taste.gif";
+import gif3 from "../assets/images/hand.gif";
+import gif4 from "../assets/images/family-tradition.gif";
 ---
 
 <MainLayout title="Homepage">
@@ -49,7 +53,7 @@ import herobillede3 from "../assets/images/hero_billede3.webp";
     <!-- Machet block start -->
     <section class="grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 md:grid-cols-12 md:gap-5">
       <div class="col-start-1 col-span-6 md:col-span-8">
-        <Heading size="small" color="dark600" font="display">When Quality Has a Face</Heading>
+        <Heading htmlheading="h2" size="small" color="dark600" font="display">When Quality Has a Face</Heading>
         <div class="col-start-1 col-span-6 flex flex-col items-start gap-4 md:col-span-8 lg:gap-5">
           <Text teksttype="manchet" font="heading" color="dark600">Our approach is simple: to produce world-class olive oil while healing the earth. By combining regenerative practices with our century-old, rare Haouzia trees native to Marrakesh’s Haouz province, our family creates a taste that is both sustainable and scientifically unique to this region. Experience the dedication of Abdeljalil and the living legacy of our Moroccan groves.</Text>
           <Button variant="secondary" href="/explore">Step Into the Grove</Button>
@@ -57,23 +61,49 @@ import herobillede3 from "../assets/images/hero_billede3.webp";
       </div>
     </section>
     <!-- Machet block slut -->
+
+    <!-- Kvaliteter block start -->
+    <section class="px-5 py-10 md:px-10 md:py-20">
+      <div class="bg-secondary-500 rounded-3xl grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 lg:grid-cols-4 md:gap-10">
+        <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-1 lg:gap-5">
+          <Image src={gif1} alt="Graphic of the Moroccan sun" class="h-[146.5px] md:h-41.5 w-auto" />
+          <Heading htmlheading="h5" size="small" color="dark900" font="display">moroccan sun</Heading>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-2 lg:gap-5">
+          <Image src={gif2} alt="Graphic of dripping haouzia olives" class="h-[146.5px] md:h-41.5 w-auto" />
+          <Heading htmlheading="h5" size="small" color="dark900" font="display">rare HAOZIA OLIVES</Heading>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-3 lg:gap-5">
+          <Image src={gif3} alt="Graphic of a hand with an olive branch" class="h-[146.5px] md:h-41.5 w-auto" />
+          <Heading htmlheading="h5" size="small" color="dark900" font="display">seasonal work</Heading>
+        </div>
+
+        <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-4 lg:gap-5">
+          <Image src={gif4} alt="Graphic of family tradition" class="h-[146.5px] md:h-41.5 w-auto" />
+          <Heading htmlheading="h5" size="small" color="dark900" font="display">family tradition</Heading>
+        </div>
+      </div>
+      <!-- Kvaliteter block slut -->
+
+      <script>
+        // Script til hero billeder start
+        const slides = document.querySelectorAll(".hero-image");
+        let current = 0;
+
+        setInterval(() => {
+          // Skjul det nuværende billede
+          slides[current].classList.replace("opacity-100", "opacity-0");
+
+          // Gå til næste (eller start forfra)
+          current = (current + 1) % slides.length;
+
+          // Vis det nye billede
+          slides[current].classList.replace("opacity-0", "opacity-100");
+        }, 3000); // Skift hver 3 sekund
+        // Script til hero billeder slut
+      </script>
+    </section>
   </main>
-
-  <script>
-    // Script til hero billeder start
-    const slides = document.querySelectorAll(".hero-image");
-    let current = 0;
-
-    setInterval(() => {
-      // Skjul det nuværende billede
-      slides[current].classList.replace("opacity-100", "opacity-0");
-
-      // Gå til næste (eller start forfra)
-      current = (current + 1) % slides.length;
-
-      // Vis det nye billede
-      slides[current].classList.replace("opacity-0", "opacity-100");
-    }, 3000); // Skift hver 3 sekund
-    // Script til hero billeder slut
-  </script>
 </MainLayout>
