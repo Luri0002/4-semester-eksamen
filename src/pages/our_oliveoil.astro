@@ -11,6 +11,7 @@ import stroke_olive from "../assets/images/stroke_olive.svg";
 import bottle from "../assets/images/oliveoil_bottle.webp";
 import tin from "../assets/images/oliveoil_tin.webp";
 import VsCard from "../components/Vs_card.astro";
+import FaqSection from "../components/FaqSection.astro";
 ---
 
 <MainLayout title="Our Olive Oil">
@@ -44,76 +45,62 @@ Our careful production process ensures a low acidity, reflecting our commitment 
 <!-- comparison section start -->
 <section class="bg-secondary-900 py-10 lg:py-20 overflow-hidden">
 
-  <!-- overskrifter start -->
-  <div class="px-5 lg:px-10 mb-5 lg:mb-10"> 
-    <Heading htmlheading="h3" size="small" font="display" color="secondary">
-      Not all olive oil is the same
-    </Heading>
+<!-- overskrifter start -->
+<div class="px-5 lg:px-10 mb-5 lg:mb-10"> 
+<Heading htmlheading="h3" size="small" font="display" color="secondary">Not all olive oil is the same</Heading>
+<Heading htmlheading="h4" size="medium" color="secondary">Abdeljalil vs. others</Heading>
+</div>
+<!-- overskrifter slut -->
 
-    <Heading htmlheading="h4" size="medium" color="secondary">
-      Abdeljalil vs. others
-    </Heading>
-  </div>
-  <!-- overskrifter slut -->
+<!-- mobile + desktop comparison wrapper -->
+<div class="relative px-5 lg:px-10">
 
-  <!-- mobile + desktop comparison wrapper -->
-  <div class="relative px-5 lg:px-10">
+<!-- scroll area -->
+<div class="overflow-x-auto lg:overflow-visible">
 
-    <!-- scroll area -->
-    <div class="overflow-x-auto lg:overflow-visible">
+<!-- grid -->
+<div class="grid grid-cols-[160px_repeat(3,220px)] lg:grid-cols-4 items-center gap-10 min-w-max lg:min-w-0">
 
-      <!-- grid -->
-      <div class="grid grid-cols-[160px_repeat(3,220px)] lg:grid-cols-4 items-center gap-10 min-w-max lg:min-w-0">
-
-        <!-- labels start -->
+<!-- labels start -->
 <div class="sticky left-0 z-30 self-stretch w-45 bg-secondary-900 pr-6 lg:static lg:w-auto lg:bg-transparent lg:z-auto">
 
-  <!-- labels content -->
-  <div class="flex flex-col gap-14 mt-80 lg:mt-90 relative z-10">
+<!-- labels content -->
+<div class="flex flex-col gap-14 mt-80 lg:mt-90 relative z-10">
     <Text teksttype="manchet" font="heading" color="secondary">Extra virgin</Text>
     <Text teksttype="manchet" font="heading" color="secondary">Ethically sourced</Text>
     <Text teksttype="manchet" font="heading" color="secondary">Harvesting tradition</Text>
     <Text teksttype="manchet" font="heading" color="secondary">Regenerative ecosystem</Text>
-  </div>
+</div>
 
 </div>
 <!-- labels slut -->
 
-        <!-- vs cards start -->
-        <VsCard
-          image={bottle}
-          heading="supermarket olive oil"
-          olives={[half_olive, stroke_olive, stroke_olive, stroke_olive]}
-        />
+<!-- vs cards start -->
+<VsCard image={bottle} heading="supermarket olive oil" olives={[half_olive, stroke_olive, stroke_olive, stroke_olive]}/>
 
-        <div class="bg-primary-500 rounded-4xl pb-8">
-          <VsCard
-            image={tin}
-            heading="Abdeljalil olive oil"
-            olives={[full_olive, full_olive, full_olive, full_olive]}
-          />
-        </div>
+<div class="bg-primary-500 rounded-4xl pb-8">
+<VsCard image={tin} heading="Abdeljalil olive oil" olives={[full_olive, full_olive, full_olive, full_olive]}/>
+</div>
 
-        <VsCard
-          image={bottle}
-          heading="Luxury olive oil"
-          olives={[full_olive, half_olive, half_olive, half_olive]}
-        />
-        <!-- vs cards slut -->
+<VsCard image={bottle} heading="Luxury olive oil" olives={[full_olive, half_olive, half_olive, half_olive]}/>
+<!-- vs cards slut -->
 
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 
 </section>
 <!-- comparison section slut -->
 
+<!-- FAQ section start -->
+<FaqSection />
+<!-- FAQ section slut -->
 
-
-
-
-
-
+<!-- produkt section start -->
+<section class="bg-primary-500">
+  <Heading>Product section</Heading>
+</section>
+<!-- produkt section slut -->
 
 </main>
 </MainLayout>
