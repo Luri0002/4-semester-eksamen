@@ -23,11 +23,11 @@
   --color-secondary-900: #282607;
 
   /* Accent */
-  --color-accent: #2c60bd;
+  --color-accent-500: #2c60bd;
   --color-accent-700: #173975;
 
   /* Light */
-  --color-light: #f6f6ef;
+  --color-light-500: #f6f6ef;
 
   /* Dark */
   --color-dark-500: #680100;
