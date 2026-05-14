@@ -9,9 +9,15 @@ import full_olive from "../assets/images/oliven.svg";
 import half_olive from "../assets/images/half_olive.svg";
 import stroke_olive from "../assets/images/stroke_olive.svg";
 import bottle from "../assets/images/oliveoil_bottle.webp";
-import tin from "../assets/images/oliveoil_tin.webp";
+import tin from "../assets/images/olive-oil-tin.png";
 import VsCard from "../components/Vs_card.astro";
 import FaqSection from "../components/FaqSection.astro";
+import hero_billede1 from "../assets/images/hero_billede1.webp";
+import from_tree_to_bottle2 from "../assets/images/from_tree_to_bottle2.webp";
+import from_tree_to_bottle3 from "../assets/images/from_tree_to_bottle3.webp";
+import from_tree_to_bottle4 from "../assets/images/from_tree_to_bottle4.webp";
+import from_tree_to_bottle5 from "../assets/images/from_tree_to_bottle5.webp";
+import ProductSection from "../components/ProductSection.astro";
 ---
 
 <MainLayout title="Our Olive Oil">
@@ -33,10 +39,10 @@ import FaqSection from "../components/FaqSection.astro";
 <!-- text-picture slut -->
 
 <!-- text-button start -->
-<div class="lg:py-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end">
+<div class="lg:py-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end lg:mb-24">
 <Text stylingclasses="mb-5 lg:mb-10">This low acidity level is a key indicator of olive oil quality. It measures the amount of free fatty acids present in the oil, expressed as a percentage of oleic acid. Contrary to its name, this acidity does not affect the oil's taste. A lower acidity indicates that the oil was produced from healthy, undamaged olives with minimal processing time. When the olive fruits are damaged or processing is delayed, fatty acids are released, which increases the acidity. 
 Our careful production process ensures a low acidity, reflecting our commitment to quality.</Text>
-<Button stylingclasses="mb-10 lg:mb-20">Shop the Harvest</Button>
+<Button>Shop the Harvest</Button>
 </div>
 <!-- text-button slut -->
 </section>
@@ -96,10 +102,94 @@ Our careful production process ensures a low acidity, reflecting our commitment 
 <FaqSection />
 <!-- FAQ section slut -->
 
-<!-- produkt section start -->
-<section class="bg-primary-500">
-  <Heading>Product section</Heading>
+<!-- from tree to bottle section start -->
+<section class="relative z-20 bg-primary-500 px-5 py-10 lg:px-10 lg:py-20">
+
+  <!-- sticky heading -->
+  <div class="sticky top-0 md:top-32 lg:top-64 z-30 flex justify-center text-center bg-primary-500 py-5 md:bg-transparent md:py-0">
+    <Heading htmlheading="h5" size="large" font="display">From tree <br /> to bottle</Heading>
+  </div>
+
+<!-- scroll content -->
+<div class="relative z-10 grid grid-cols-6 md:grid-cols-12">
+
+  <!-- item 1 start-->
+    <div class="col-start-1 col-span-5 md:col-span-4 py-10 md:pt-10 md:pb-20">
+
+    <!-- div med heading + text start -->
+    <div class="gap-2.5 md:gap-5"> 
+    <Heading htmlheading="h6" size="small" font="display">Step 1: Harvest</Heading>
+    <Text>We begin harvesting in late October and early November, while the olives are still green and early in their ripening cycle.</Text>
+    <Text stylingclasses="mt-2.5 md:mt-5">Although this produces a lower yield, it results in a higher concentration of polyphenols, giving the oil its distinctive peppery and bitter character. </Text>
+    </div>
+    <!-- div med heading + text slut -->
+      <Image src={hero_billede1} alt="Olive trees grove during harvesting" class="mt-5 md:mt-10"/>
+    </div>
+  <!-- item 1 slut-->
+  
+  <!-- item 2 start-->
+    <div class="col-start-3 col-span-4 md:col-start-10 md:col-span-3 py-10 md:py-20 md:mt-60">
+
+    <!-- div med heading + text start -->
+    <div class="gap-2.5 md:gap-5"> 
+    <Heading htmlheading="h6" size="small" font="display">Step 2: Journey</Heading>
+    <Text>All olives are hand-picked and transported by truck to our processing partner in Sidi Bou Othmane, located just two hours from our farm. This close distance allows the olives to be processed within 24 hours, preserving freshness and quality. </Text>
+    </div>
+    <!-- div med heading + text slut -->
+      <Image src={from_tree_to_bottle2} alt="Abdeljalil's family on the olive grove" class="mt-5 md:mt-10"/>
+    </div>
+  <!-- item 2 slut-->
+  
+<!-- item 3 start-->
+<div class="col-start-1 col-span-5 md:col-start-2 md:col-span-7 py-10 md:py-0 md:-mt-70">
+  <div class="md:flex md:flex-row gap-2.5 md:gap-5 md:items-end">
+    <!-- div med heading + text start -->
+    <div class="gap-2.5 md:gap-5"> 
+    <Heading htmlheading="h6" size="small" font="display">Step 3:<br /> Cleaning & crushing</Heading>
+    <Text>At the mill, the olives are added to a processing machine that can handle up to ten tonnes at a time. Leaves and branches are removed, and the olives are washed with cold water to eliminate dirt.</Text>
+    <Text stylingclasses="mt-2.5 md:mt-5">The cleaned olives are then crushed and kneaded for at least 40 minutes. Processing in small batches helps preserve aroma, antioxidants, and nutrients, creating a paste made of oil, water, and olive pulp. </Text>
+  </div>
+    <!-- div med heading + text slut -->
+      <Image src={from_tree_to_bottle3} alt="Olives cleaning and crushing process" class="mt-5 md:mt-0"/>
+  </div>
+</div>
+<!-- item 3 slut-->
+
+<!-- item 4 start-->
+  <div class="col-start-3 col-span-4 md:col-start-9 md:col-span-4 py-10 md:py-20 md:mt-50">
+
+    <!-- div med heading + text start -->
+    <div class="gap-2.5 md:gap-5"> 
+    <Heading htmlheading="h6" size="small" font="display">Step 4:<br />Oil Extraction</Heading>
+    <Text>The oil is extracted using a fully mechanical process without chemicals, heat, or solvents. The olive paste is spun in a high-speed horizontal centrifuge, which separates solids, water, and oil based on density.</Text>
+    <Text stylingclasses="mt-2.5 md:mt-5">A second vertical centrifuge further refines the oil by removing remaining water and fine particles, resulting in pure extra virgin olive oil.</Text>
+  </div>
+    <!-- div med heading + text slut -->
+      <Image src={from_tree_to_bottle4} alt="Abdeljalil's family on the olive grove" class="mt-5 md:mt-10"/>
+  </div>
+<!-- item 4 slut-->
+
+<!-- item 5 start-->
+<div class="col-start-1 col-span-3 md:col-span-6 py-10 md:-mt-145">
+  <div class="md:flex md:flex-row gap-2.5 md:gap-5 md:items-end">
+    <!-- div med heading + text start -->
+    <div class="gap-2.5 md:gap-5 md:order-2"> 
+    <Heading htmlheading="h6" size="small" font="display">Step 5:<br /> Storage & Bottling</Heading>
+    <Text>The fresh oil is stored in stainless steel vats for around four days, allowing natural sediment to settle before bottling and delivery.</Text>
+  </div>
+    <!-- div med heading + text slut -->
+      <Image src={from_tree_to_bottle5} alt="Bottling process of the olive oil" class="md:order-1 mt-5 md:mt-0"/>
+  </div>
+</div>
+<!-- item 5 slut-->
+    
+
+</div>
 </section>
+<!-- from tree to bottle section slut -->
+
+<!-- produkt section start -->
+<ProductSection></ProductSection>
 <!-- produkt section slut -->
 
 </main>
