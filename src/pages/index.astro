@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
+import ProductSection from "../components/ProductSection.astro";
 import herobillede1 from "../assets/images/hero_billede1.webp";
 import herobillede2 from "../assets/images/hero_billede2.webp";
 import herobillede3 from "../assets/images/hero_billede3.webp";
@@ -87,23 +88,27 @@ import gif4 from "../assets/images/family-tradition.gif";
       </div>
       <!-- Kvaliteter block slut -->
 
-      <script>
-        // Script til hero billeder start
-        const slides = document.querySelectorAll(".hero-image");
-        let current = 0;
-
-        setInterval(() => {
-          // Skjul det nuværende billede
-          slides[current].classList.replace("opacity-100", "opacity-0");
-
-          // Gå til næste (eller start forfra)
-          current = (current + 1) % slides.length;
-
-          // Vis det nye billede
-          slides[current].classList.replace("opacity-0", "opacity-100");
-        }, 3000); // Skift hver 3 sekund
-        // Script til hero billeder slut
-      </script>
+      <!-- Product section start -->
+      <ProductSection imageFirst={true} cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
+      <!-- Product section slut -->
     </section>
   </main>
 </MainLayout>
+
+<script>
+  // Script til hero billeder start
+  const slides = document.querySelectorAll(".hero-image");
+  let current = 0;
+
+  setInterval(() => {
+    // Skjul det nuværende billede
+    slides[current].classList.replace("opacity-100", "opacity-0");
+
+    // Gå til næste (eller start forfra)
+    current = (current + 1) % slides.length;
+
+    // Vis det nye billede
+    slides[current].classList.replace("opacity-0", "opacity-100");
+  }, 3000); // Skift hver 3 sekund
+  // Script til hero billeder slut
+</script>

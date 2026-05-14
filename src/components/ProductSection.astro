@@ -1,0 +1,57 @@
+---
+const { cardTitle, cardText, buttonHref, buttonText, imageFirst = false } = Astro.props;
+import { Image } from "astro:assets";
+import produkt_billede1 from "../assets/images/produkt_billede1.webp";
+import produkt_billede2 from "../assets/images/produkt_billede2.webp";
+import produkt_billede3 from "../assets/images/produkt_billede3.webp";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+import Button from "../components/Button.astro";
+---
+
+<section class="py-10 md:py-20 flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-10">
+  <!-- Den blå boks med tekst -->
+  <div class={`bg-accent-700 rounded-3xl px-5 py-10 md:px-10 flex flex-col justify-center ${imageFirst ? "md:order-2" : "md:order-1"}`}>
+    <Heading htmlheading="h2" size="small" color="light" font="display">{cardTitle}</Heading>
+    <div class="flex flex-col items-start gap-5">
+      <Text color="light">{cardText}</Text>
+      <Button variant="primary" href={buttonHref}>{buttonText}</Button>
+    </div>
+  </div>
+
+  <!-- Billederne der skifter -->
+  <!-- Billede 1 (Aktivt fra start) -->
+  <div class={`relative w-full overflow-hidden ${imageFirst ? "md:order-1" : "md:order-2"}`}>
+    <div class="product-bg transition-opacity duration-800 opacity-100 z-0">
+      <Image src={produkt_billede1} alt="Product Image" class="object-cover w-full h-full" />
+    </div>
+
+    <!-- Billede 2 (Skjult) -->
+    <div class="product-bg absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
+      <Image src={produkt_billede2} alt="Product Image" class="object-cover w-full h-full" />
+    </div>
+
+    <!-- Billede 3 (Skjult) -->
+    <div class="product-bg absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
+      <Image src={produkt_billede3} alt="Product Image" class="object-cover w-full h-full" />
+    </div>
+  </div>
+</section>
+
+<script>
+  // Script til skiftende product bg billeder start
+  const slides = document.querySelectorAll(".product-bg");
+  let current = 0;
+
+  setInterval(() => {
+    // Skjul det nuværende billede
+    slides[current].classList.replace("opacity-100", "opacity-0");
+
+    // Gå til næste (eller start forfra)
+    current = (current + 1) % slides.length;
+
+    // Vis det nye billede
+    slides[current].classList.replace("opacity-0", "opacity-100");
+  }, 3000); // Skift hver 3 sekund
+  // Script til skiftende product bg billeder slut
+</script>
