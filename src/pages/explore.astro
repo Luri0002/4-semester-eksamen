@@ -24,33 +24,52 @@ import ProductSection from "../components/ProductSection.astro";
 <main class="pt-35 lg:pt-50">
 
 <!-- first section start -->
-<section class="grid grid-cols-6 px-5 lg:px-10 lg:grid-cols-12">
+<section class="relative grid grid-cols-6 px-5 md:px-10 md:grid-cols-12">
+
+<!-- lyd knap start -->
+<button
+  id="sound-button"
+  class="fixed left-5 bottom-5 md:left-10 md:bottom-10 z-40 w-36 md:w-60 transition-opacity duration-300"
+  aria-label="Play sound"
+>
+  <img
+    id="sound-button-img"
+    src="/images/lydmute_knap.svg"
+    alt="muted button that plays sound"
+  />
+</button>
+<!-- lyd knap slut -->
+
+<!-- lydfilen -->
+<audio id="farm-audio" src="/sounds/farm_sound.mp3" loop></audio>
+
 <!-- headings start -->
-<div class="col-start-1 col-span-6 lg:col-span-9 gap-2.5"> 
+<div class="col-start-1 col-span-6 md:col-span-9 gap-2.5"> 
 <Heading htmlheading="h1" size="small" font="display">Explore our farm</Heading>
 <Heading htmlheading="h2" size="medium" font="heading">Meet Abdeljalil</Heading>
 </div>
 <!-- headings slut -->
 
 <!-- text-picture-text start -->
-<div class="py-5 lg:py-10 col-start-1 col-span-6 lg:col-start-4 lg:col-span-4"> 
-<Text stylingclasses="mb-5 lg:mb-10">The story of our olive oil begins with a man: Abdeljalil. Raised with six siblings in the vibrant old town of Marrakesh, he grew up with an insatiable curiosity for the world. That passion led him to become a life science teacher, dedicated to showing how nature evolves and works together. He passed this same spirit to his sons, Marouane and Anas, teaching them to see the world, its people, and its wonders with open minds.</Text>
+<div class="py-5 md:py-10 col-start-1 col-span-6 md:col-start-4 md:col-span-4"> 
+<Text stylingclasses="mb-5 md:mb-10">The story of our olive oil begins with a man: Abdeljalil. Raised with six siblings in the vibrant old town of Marrakesh, he grew up with an insatiable curiosity for the world. That passion led him to become a life science teacher, dedicated to showing how nature evolves and works together. He passed this same spirit to his sons, Marouane and Anas, teaching them to see the world, its people, and its wonders with open minds.</Text>
 <Image src={abdeljalil_2} alt="Picture of Abdeljalil that stands between two olive trees" />
-<Text stylingclasses="mt-5 lg:mt-10">Abdeljalil spent much of his free time on the family farm, teaching his children to care for their century old Haouzia olive trees. These trees, unique to Marrakesh's Haouz province, thrive only in this land's particular climate, producing olives with an intense, unmistakable flavor.</Text>
+<Text stylingclasses="mt-5 md:mt-10">Abdeljalil spent much of his free time on the family farm, teaching his children to care for their century old Haouzia olive trees. These trees, unique to Marrakesh's Haouz province, thrive only in this land's particular climate, producing olives with an intense, unmistakable flavor.</Text>
 </div>
 <!-- text-picture-text slut -->
 
 <!-- picture left-sided start-->
-<div class="mb-5 lg:-mt-30 col-start-3 col-span-4 lg:col-start-10 lg:col-span-3"> 
+<div class="mb-5 md:-mt-30 col-start-3 col-span-4 md:col-start-10 md:col-span-3"> 
 <Image src={abdeljalil_3} alt="Picture of Abdeljalil and his sons" />
 </div>
 <!-- picture left-sided slut-->
 
 <!-- last picture start -->
-<div class="mb-10 lg:-mt-132 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4"> 
+<div class="mb-10 md:-mt-132 col-start-1 col-span-6 md:col-start-9 md:col-span-4"> 
 <Image src={abdeljalil_1} alt="Picture of Abdeljalil by an olive oil machine" />
 </div>
 <!-- last picture slut-->
+
 </section> 
 <!-- first section slut -->
   
@@ -213,5 +232,69 @@ import ProductSection from "../components/ProductSection.astro";
 
 <!-- Meet the family section slut -->
   
-  </main>
+ <script>
+  // sound button
+  const soundButton = document.querySelector("#sound-button");
+  const soundButtonImg = document.querySelector("#sound-button-img");
+  const audio = document.querySelector("#farm-audio");
+
+  const defaultSvg = "/images/lydmute_knap.svg";
+  const hoverSvg = "/images/lydmute_knap_hover.svg";
+  const playingSvg = "/images/lydplay_knap.svg";
+
+  let isPlaying = false;
+
+  soundButton?.addEventListener("mouseenter", () => {
+    if (!isPlaying && soundButtonImg) {
+      soundButtonImg.src = hoverSvg;
+    }
+  });
+
+  soundButton?.addEventListener("mouseleave", () => {
+    if (!isPlaying && soundButtonImg) {
+      soundButtonImg.src = defaultSvg;
+    }
+  });
+
+  soundButton?.addEventListener("click", () => {
+  if (!audio || !soundButtonImg) return;
+
+  if (isPlaying) {
+    audio.pause();
+    audio.currentTime = 0;
+    soundButtonImg.src = defaultSvg;
+    isPlaying = false;
+  } else {
+    soundButtonImg.src = playingSvg;
+    isPlaying = true;
+
+    audio.play().catch((error) => {
+      console.log("Audio kunne ikke afspilles:", error);
+    });
+  }
+});
+
+  // hide before footer
+  const footer = document.querySelector("footer");
+
+  if (soundButton && footer) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          soundButton.classList.add("opacity-0", "pointer-events-none");
+        } else {
+          soundButton.classList.remove("opacity-0", "pointer-events-none");
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(footer);
+  }
+</script>
+
+</main>
 </MainLayout>
+
