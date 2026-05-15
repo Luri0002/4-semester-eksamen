@@ -11,6 +11,13 @@ import ourwayofcare1 from "../assets/images/our_way_of_care1.webp";
 import ourwayofcare2 from "../assets/images/our_way_of_care2.webp";
 import ourwayofcare3 from "../assets/images/our_way_of_care3.webp";
 import ourwayofcare4 from "../assets/images/our_way_of_care4.webp";
+import Abdeljalil from "../assets/images/abdeljalil.webp";
+import Anas from "../assets/images/anas.webp";
+import Lea from "../assets/images/lea.webp";
+import Abdeljalil_logo from "../assets/images/logo.svg";
+import Anas_logo from "../assets/images/anas.svg";
+import Lea_logo from "../assets/images/lea.svg";
+import ProductSection from "../components/ProductSection.astro";
 ---
 
 <MainLayout title="Explore our farm">
@@ -159,9 +166,52 @@ import ourwayofcare4 from "../assets/images/our_way_of_care4.webp";
   </div>
 </section>
 <!-- our way of care section slut -->
+
+<!-- Product section start -->
+<section class="py-5 md:py-10 px-5 md:px-10"> 
+      <ProductSection imageFirst={true} cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
+</section>
+<!-- Product section slut -->
+
+<!-- Meet the family section start -->
+<section class="px-5 pb-10 md:px-10 md:pb-20">
+ <div class="bg-secondary-500 rounded-3xl py-5 md:py-10">
+
+  <!-- overskrift start-->
+  <Heading htmlheading="h5" size="medium" stylingclasses="mx-24 lg:mx-14 pt-10 pb-10 md:px-10">Meet the family</Heading>
+  <!-- overskrift slut -->
+
+  <!-- billederne start-->
+  <div class="flex flex-col md:flex-row md:flex-wrap justify-between items-center md:px-24 md:py-10"> 
+
+    <!-- abdeljalil -->
+    <div class="relative mb-32 lg:mb-0">
+    <Image src={Abdeljalil} alt="potrait of abdeljalil" class="mb-2.5 md:mb-5"/>
+    <Heading htmlheading="h6" size="small" font="display">Abdeljalil</Heading>
+    <Image src={Abdeljalil_logo} alt="illustration of abdeljalil" class="absolute top-70 right-5 md:top-70 md:-right-10 -rotate-5"/>
+    </div>
+
+    <!-- anas -->
+    <div class="relative mb-20 lg:mb-0">
+    <Image src={Anas} alt="potrait of anas" class="mb-2.5 md:mb-5"/>
+    <Heading htmlheading="h6" size="small" font="display">Anas</Heading>
+    <Image src={Anas_logo} alt="illustration of anas" class="absolute -top-14 -left-8 md:-top-16 -rotate-5"/>
+    </div>
+
+    <!-- lea -->
+    <div class="relative mb-10 lg:mb-0">
+    <Image src={Lea} alt="potrait of lea" class="mb-2.5 md:mb-5"/>
+    <Heading htmlheading="h6" size="small" font="display">Lea</Heading>
+    <Image src={Lea_logo} alt="illustration of lea" class="absolute top-70 right-5 md:top-70 md:-right-10 rotate-5"/>
+    </div>
   
-  
-  
+  </div>
+  <!-- billederne slut-->
+
+ </div>
+</section>
+
+<!-- Meet the family section slut -->
   
   </main>
 </MainLayout>
