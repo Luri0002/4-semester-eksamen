@@ -1,0 +1,24 @@
+---
+const { graphic, graphicAlt, stage, season, description, rightaligned = false } = Astro.props;
+import { Image } from "astro:assets";
+import Text from "../components/Text.astro";
+---
+
+<div class={`flex flex-col gap-2.5 p-5 bg-primary-500 rounded-3xl w-56 stickyparallax1 y-10 ${rightaligned ? "ml-auto mr-10 md:mr-20" : "mr-auto ml-10 md:ml-20"}`}>
+  <Image src={graphic} alt={graphicAlt} class="w-full h-auto" />
+  <div class="flex flex-col gap-1">
+    <Text teksttype="manchet" font="heading" color="dark600">{stage}</Text>
+    <Text>{season}</Text>
+  </div>
+  <Text>{description}</Text>
+</div>
+
+<script>
+  /* Import af Motion One bibliotek til timeline animation */
+  import { animate, stagger, inView, scroll } from "motion";
+  const alleKort = document.querySelectorAll(".stickyparallax1");
+
+  alleKort.forEach((kort) => {
+    scroll(animate(kort, { y: [100, -400] }), { target: kort });
+  });
+</script>

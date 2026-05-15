@@ -5,6 +5,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import ProductSection from "../components/ProductSection.astro";
+import TimelineCard from "../components/TimelineCard.astro";
 import herobillede1 from "../assets/images/hero_billede1.webp";
 import herobillede2 from "../assets/images/hero_billede2.webp";
 import herobillede3 from "../assets/images/hero_billede3.webp";
@@ -12,26 +13,34 @@ import gif1 from "../assets/images/moroccan-sun.gif";
 import gif2 from "../assets/images/rich-taste.gif";
 import gif3 from "../assets/images/hand.gif";
 import gif4 from "../assets/images/family-tradition.gif";
+import dormancy from "../assets/images/dormancy.svg";
+import budandflower from "../assets/images/budandflower.svg";
+import fruitset from "../assets/images/fruitset.svg";
+import pithardening from "../assets/images/pithardening.svg";
+import flavorsintensify from "../assets/images/flavorsintensify.svg";
+import maturation from "../assets/images/maturation.svg";
+import harvest from "../assets/images/harvest.svg";
+import oliven from "../assets/images/oliven.svg";
 ---
 
 <MainLayout title="Homepage">
-  <main class="">
+  <main>
     <!-- hero start -->
     <section class="relative aspect-2/3 md:aspect-video lg:aspect-2/1 w-full overflow-hidden">
       <!-- hero billeder start -->
       <!-- Billede 1 (Aktivt fra start) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-100 z-0">
-        <Image src={herobillede1} alt="mangler mangler her" class="object-cover w-full h-full" />
+        <Image src={herobillede1} alt="Olive plantation in Morocco" class="object-cover w-full h-full" />
       </div>
 
       <!-- Billede 2 (Skjult) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
-        <Image src={herobillede2} alt="mangler mangler her" class="object-cover w-full h-full" />
+        <Image src={herobillede2} alt="Haouzia olive tree in Marrakesh" class="object-cover w-full h-full" />
       </div>
 
       <!-- Billede 3 (Skjult) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
-        <Image src={herobillede3} alt="mangler mangler her" class="object-cover w-full h-full" />
+        <Image src={herobillede3} alt="Family working in the grove in Morocco" class="object-cover w-full h-full" />
       </div>
 
       <!-- Overlay -->
@@ -87,28 +96,87 @@ import gif4 from "../assets/images/family-tradition.gif";
         </div>
       </div>
       <!-- Kvaliteter block slut -->
-
-      <!-- Product section start -->
-      <ProductSection imageFirst={true} cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
-      <!-- Product section slut -->
     </section>
+
+    <!-- Timeline section start -->
+    <section id="timeline-section" class="relative md:grid md:grid-cols-2">
+      <div class="flex flex-col items-center gap-5 py-10 justify-center md:sticky md:top-0 md:h-screen md:py-0 z-50">
+        <Heading htmlheading="h2" size="xlarge">177</Heading>
+        <Text teksttype="manchet" font="heading">Days until harvest</Text>
+        <div class="flex flex-col items-center gap-2.5">
+          <Text>Harvest Window: Oct 25 – Nov 15</Text>
+          <Text>Current Stage: Fruit Set</Text>
+        </div>
+        <Button variant="primary" href="/our_oliveoil">More about our olive oil</Button>
+        <!-- Oliven "tidslinjen" på desktop -->
+        <div class="olive-icon hidden md:block absolute top-0 left-full -translate-x-1/2 w-16 h-auto pointer-events-none">
+          <Image src={oliven} alt="Grafik af oliven" class="w-full h-auto" />
+        </div>
+        <!-- Oliven "tidslinjen" på desktop stop -->
+      </div>
+      <ul>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede1.webp')">
+          <TimelineCard graphic={dormancy} graphicAlt="Graphic of the moon and sleep symbols: zzz" stage="Dormancy" season="Mid-Nov – mid-Feb" description="Trees rest and store energy." />
+        </li>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede2.webp')">
+          <TimelineCard rightaligned={true} graphic={budandflower} graphicAlt="Graphic of small olive buds and flowers" stage="Bud & Flower" season="Mid-Feb – Apr" description="Buds swell; delicate blossoms form." />
+        </li>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede3.webp')">
+          <TimelineCard graphic={fruitset} graphicAlt="Graphic of small olives" stage="Fruit Set" season="May – Jun" description="Tiny olives develop after pollination." />
+        </li>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede4.webp')">
+          <TimelineCard rightaligned={true} graphic={pithardening} graphicAlt="Graphic of olive pit" stage="Pit Hardening" season="July" description="Stones form inside the olives." />
+        </li>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede5.webp')">
+          <TimelineCard graphic={flavorsintensify} graphicAlt="Graphic of olive width rising oil contents" stage="Flavors intensify" season="Mid-Feb – Apr" description="Oil content rises; flavors form." />
+        </li>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede6.webp')">
+          <TimelineCard rightaligned={true} graphic={maturation} graphicAlt="Graphic of the moroccan sun" stage="Maturation" season="Sept – Oct 24" description="Aromas deepen; texture and taste round out." />
+        </li>
+        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede7.webp')">
+          <TimelineCard graphic={harvest} graphicAlt="Graphic of the harvest" stage="Harvest" season="Oct 25 – Nov 15" description="Hand-picked within the optimal window." />
+        </li>
+      </ul>
+    </section>
+    <!-- Timeline section slut -->
+
+    <!-- Product section start -->
+    <ProductSection imageFirst={true} cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
+    <!-- Product section slut -->
   </main>
+
+  <script>
+    // Script til hero billeder start
+    const slides = document.querySelectorAll(".hero-image");
+    let current = 0;
+
+    setInterval(() => {
+      // Skjul det nuværende billede
+      slides[current].classList.replace("opacity-100", "opacity-0");
+
+      // Gå til næste (eller start forfra)
+      current = (current + 1) % slides.length;
+
+      // Vis det nye billede
+      slides[current].classList.replace("opacity-0", "opacity-100");
+    }, 3000); // Skift hver 3 sekund
+    // Script til hero billeder slut
+
+    /* Import af Motion One bibliotek til timeline animation */
+    import { animate, stagger, inView, scroll } from "motion";
+
+    const timelineSection = document.querySelector("#timeline-section");
+
+    if (timelineSection) {
+      scroll(
+        animate(".olive-icon", {
+          top: ["0%", "100%"],
+        }),
+        {
+          target: timelineSection,
+          offset: ["start start", "end end"],
+        },
+      );
+    }
+  </script>
 </MainLayout>
-
-<script>
-  // Script til hero billeder start
-  const slides = document.querySelectorAll(".hero-image");
-  let current = 0;
-
-  setInterval(() => {
-    // Skjul det nuværende billede
-    slides[current].classList.replace("opacity-100", "opacity-0");
-
-    // Gå til næste (eller start forfra)
-    current = (current + 1) % slides.length;
-
-    // Vis det nye billede
-    slides[current].classList.replace("opacity-0", "opacity-100");
-  }, 3000); // Skift hver 3 sekund
-  // Script til hero billeder slut
-</script>
