@@ -32,14 +32,14 @@ import ProductSection from "../components/ProductSection.astro";
 <!-- headings slut -->
 
 <!-- text-picture start -->
-<div class="py-5 lg:py-10 col-start-1 col-span-6 lg:col-start-4 lg:col-span-4"> 
+<div class="py-5 lg:pt-10 lg:pb-20 col-start-1 col-span-6 lg:col-start-4 lg:col-span-4"> 
 <Text stylingclasses="mb-5 lg:mb-10">This estimation is based on our extensive experience in producing olive oil from our family's farm and distributing it to family and friends inside and outside Morocco. The consistency of our process and the health of our olive trees contribute to this result. Our previous harvests have undergone rigorous testing, confirming our ability to  produce an oil that far exceeds the strict criteria for extra virgin  which requires an acidity level of 0.8% or less.</Text>
-<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" class="lg:mb-20" />
+<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" class="" />
 </div>
 <!-- text-picture slut -->
 
 <!-- text-button start -->
-<div class="lg:py-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end lg:mb-24">
+<div class="pb-10 col-start-1 col-span-6 lg:col-start-9 lg:col-span-4 lg:self-end lg:mb-14">
 <Text stylingclasses="mb-5 lg:mb-10">This low acidity level is a key indicator of olive oil quality. It measures the amount of free fatty acids present in the oil, expressed as a percentage of oleic acid. Contrary to its name, this acidity does not affect the oil's taste. A lower acidity indicates that the oil was produced from healthy, undamaged olives with minimal processing time. When the olive fruits are damaged or processing is delayed, fatty acids are released, which increases the acidity. 
 Our careful production process ensures a low acidity, reflecting our commitment to quality.</Text>
 <Button>Shop the Harvest</Button>
@@ -99,22 +99,22 @@ Our careful production process ensures a low acidity, reflecting our commitment 
 <!-- comparison section slut -->
 
 <!-- from tree to bottle section start -->
-<section class="relative z-20 bg-primary-500 px-5 py-10 lg:px-10 lg:py-20">
+<section class="relative z-20 bg-primary-500 px-5 py-10 md:px-10 md:pt-10 md:pb-0">
 
   <!-- sticky heading -->
-  <div class="sticky top-0 md:top-32 lg:top-64 z-30 flex justify-center text-center bg-primary-500 py-5 md:bg-transparent md:py-0">
+  <div class="pt-5 md:pb-10 sticky top-0 md:top-32 lg:top-64 z-30 flex justify-center text-center bg-primary-500 md:bg-transparent">
     <Heading htmlheading="h5" size="large" font="display">From tree <br /> to bottle</Heading>
   </div>
 
 <!-- scroll content -->
-<div class="relative z-10 grid grid-cols-6 md:grid-cols-12">
+<div class="relative z-10 grid grid-cols-6 md:gap-x-5 md:grid-cols-12 md:grid-rows-[repeat(11,215px)]">
 
   <!-- item 1 start-->
-    <div class="col-start-1 col-span-5 md:col-span-4 py-10 md:pt-10 md:pb-20">
+    <div class="col-start-1 col-span-5 mb-10 md:mb-0 md:col-span-4 md:row-start-1">
 
     <!-- div med heading + text start -->
     <div class="gap-2.5 md:gap-5"> 
-    <Heading htmlheading="h6" size="small" font="display">Step 1: Harvest</Heading>
+    <Heading htmlheading="h6" size="small" font="display">Step 1:<br /> Harvest</Heading>
     <Text>We begin harvesting in late October and early November, while the olives are still green and early in their ripening cycle.</Text>
     <Text stylingclasses="mt-2.5 md:mt-5">Although this produces a lower yield, it results in a higher concentration of polyphenols, giving the oil its distinctive peppery and bitter character. </Text>
     </div>
@@ -124,11 +124,11 @@ Our careful production process ensures a low acidity, reflecting our commitment 
   <!-- item 1 slut-->
   
   <!-- item 2 start-->
-    <div class="col-start-3 col-span-4 md:col-start-10 md:col-span-3 py-10 md:py-20 md:mt-60">
+    <div class="col-start-3 col-span-4 md:col-start-9 md:col-span-3 md:row-start-2 mb-10 md:mb-0">
 
     <!-- div med heading + text start -->
     <div class="gap-2.5 md:gap-5"> 
-    <Heading htmlheading="h6" size="small" font="display">Step 2: Journey</Heading>
+    <Heading htmlheading="h6" size="small" font="display">Step 2:<br /> Journey</Heading>
     <Text>All olives are hand-picked and transported by truck to our processing partner in Sidi Bou Othmane, located just two hours from our farm. This close distance allows the olives to be processed within 24 hours, preserving freshness and quality. </Text>
     </div>
     <!-- div med heading + text slut -->
@@ -137,22 +137,22 @@ Our careful production process ensures a low acidity, reflecting our commitment 
   <!-- item 2 slut-->
   
 <!-- item 3 start-->
-<div class="col-start-1 col-span-5 md:col-start-2 md:col-span-7 py-10 md:py-0 md:-mt-70">
-  <div class="md:flex md:flex-row gap-2.5 md:gap-5 md:items-end">
+<div class="col-start-1 col-span-4 mb-10 md:mb-0 md:col-start-1 md:col-span-10 md:row-start-5 lg:col-start-2 lg:col-span-7">
+  <div class="md:flex md:flex-row md:items-end">
     <!-- div med heading + text start -->
-    <div class="gap-2.5 md:gap-5"> 
+    <div class="gap-2.5 md:gap-5 md:mr-5"> 
     <Heading htmlheading="h6" size="small" font="display">Step 3:<br /> Cleaning & crushing</Heading>
     <Text>At the mill, the olives are added to a processing machine that can handle up to ten tonnes at a time. Leaves and branches are removed, and the olives are washed with cold water to eliminate dirt.</Text>
     <Text stylingclasses="mt-2.5 md:mt-5">The cleaned olives are then crushed and kneaded for at least 40 minutes. Processing in small batches helps preserve aroma, antioxidants, and nutrients, creating a paste made of oil, water, and olive pulp. </Text>
   </div>
     <!-- div med heading + text slut -->
-      <Image src={from_tree_to_bottle3} alt="Olives cleaning and crushing process" class="mt-5 md:mt-0"/>
+      <Image src={from_tree_to_bottle3} alt="Olives cleaning and crushing process" class="mt-5"/>
   </div>
 </div>
 <!-- item 3 slut-->
 
 <!-- item 4 start-->
-  <div class="col-start-3 col-span-4 md:col-start-9 md:col-span-4 py-10 md:py-20 md:mt-50">
+  <div class="col-start-2 col-span-5 md:col-start-9 md:col-span-4 md:row-start-7 mb-10 md:mb-0">
 
     <!-- div med heading + text start -->
     <div class="gap-2.5 md:gap-5"> 
@@ -166,15 +166,15 @@ Our careful production process ensures a low acidity, reflecting our commitment 
 <!-- item 4 slut-->
 
 <!-- item 5 start-->
-<div class="col-start-1 col-span-3 md:col-span-6 py-10 md:-mt-145">
-  <div class="md:flex md:flex-row gap-2.5 md:gap-5 md:items-end">
+<div class="col-start-1 col-span-4 md:col-span-6 md:row-start-9 lg:col-start-2 lg:col-span-7">
+  <div class="md:flex md:flex-row md:items-end">
     <!-- div med heading + text start -->
     <div class="gap-2.5 md:gap-5 md:order-2"> 
     <Heading htmlheading="h6" size="small" font="display">Step 5:<br /> Storage & Bottling</Heading>
     <Text>The fresh oil is stored in stainless steel vats for around four days, allowing natural sediment to settle before bottling and delivery.</Text>
   </div>
     <!-- div med heading + text slut -->
-      <Image src={from_tree_to_bottle5} alt="Bottling process of the olive oil" class="md:order-1 mt-5 md:mt-0"/>
+      <Image src={from_tree_to_bottle5} alt="Bottling process of the olive oil" class="md:order-1 mt-5 md:mt-0 md:mr-5"/>
   </div>
 </div>
 <!-- item 5 slut-->
