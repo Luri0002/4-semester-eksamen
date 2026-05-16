@@ -11,24 +11,24 @@ import Link from "../components/Link.astro";
 <footer class="relative overflow-hidden">
 
 <!-- top newsletter section start-->
-<section class="bg-secondary-500 px-5 py-10 lg:px-10 lg:py-20">
+<section class="bg-secondary-500 px-5 py-10 md:px-10 md:py-20">
     
 <!-- newsletter kolonne start-->
-<div class="grid grid-cols-6 gap-2.5 lg:grid-cols-12 lg:gap-5">
+<div class="grid grid-cols-6 gap-2.5 md:grid-cols-12 md:gap-5">
 
 <!-- newsletter content start-->
-<div class="col-start-1 col-span-6 lg:col-start-7 lg:col-span-6">
+<div class="col-start-1 col-span-6 md:col-start-7 md:col-span-6">
     
-    <Heading htmlheading="h4" size="small" font="display" stylingclasses="lg:mb-2.5"> Get a taste of Morocco in your inbox!</Heading>
+    <Heading htmlheading="h4" size="small" font="display" stylingclasses="md:mb-2.5"> Get a taste of Morocco in your inbox!</Heading>
     
-    <Text teksttype = "manchet" font = "heading" stylingclasses="mb-5 lg:mb-10">Stay connected to the rhythm of our olive harvest by subscribing to our newsletter</Text>
+    <Text teksttype = "manchet" font = "heading" stylingclasses="mb-5 md:mb-10">Stay connected to the rhythm of our olive harvest by subscribing to our newsletter</Text>
 
     <!-- Email Input start -->
 <div class="grid grid-cols-6 gap-2.5"> 
     <Text stylingclasses="col-span-6">Email address:</Text>
     <input type="email" placeholder="Example@mail.com" class="col-span-6 md:col-span-4 border md:border-2 border-dark-700 text-dark-700/50 placeholder-dark-700/50 bg-transparent rounded-full px-4 py-2 md:px-5 md:py-2.5"/>
     <!-- Email Input slut -->
-    <Button variant="secondary" stylingclasses="col-span-2 md:col-span-2">Get a Taste</Button>    
+    <Button variant="secondary" stylingclasses="col-span-2 md:col-span-2 text-center">Get a Taste</Button>    
 </div>   
 </div>
 <!-- newsletter content start-->
@@ -40,22 +40,22 @@ import Link from "../components/Link.astro";
 <!-- top newsletter section slut-->
 
 <!-- bottom footer start-->
-<section class="relative bg-dark-500 px-5 pt-10 lg:px-10 lg:pt-20">
+<section class="relative bg-dark-500 px-5 pt-10 md:px-10 md:pt-20">
 
 <!-- footer info start-->
 <div class="pb-10 md:grid md:grid-cols-12 md:gap-5">
 
   <!-- Meet us -->
-  <div class="flex flex-col md:col-start-7 md:col-span-3"> 
-    <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="lg:mb-2">Meet us</Heading>
+  <div class="flex flex-col md:col-start-6 md:col-span-3 lg:col-start-7"> 
+    <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="md:mb-2">Meet us</Heading>
     <Link>Instagram</Link>
     <Link>info@abdeljaliloliveoil.com</Link>
     <Text color="secondary400" stylingclasses="pb-10">Bertha-von-Suttner-Weg 10<br />47877 Willich. Germany</Text>
   </div> 
 
   <!-- Good to know -->
-  <div class="flex flex-col md:col-start-10 md:col-span-2"> 
-    <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="lg:mb-2">Good to know</Heading>
+  <div class="flex flex-col md:col-start-10 md:col-span-3"> 
+    <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="md:mb-2">Good to know</Heading>
     <Link>Impressum</Link>
     <Link>Privacy Policy</Link>
     <Link>Terms & Condition</Link>
