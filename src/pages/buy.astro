@@ -1,15 +1,218 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
+import oliven from "../assets/images/oliven.svg";
+import hero from "../assets/images/buy_herobillede.webp";
 ---
 
 <MainLayout title="Buy Subscribe">
-  <main class="container mx-auto p-4">
-    <Heading htmlheading="h1">Buy Subscribe</Heading>
-    <Text teksttype="brødtekst">Så bliver Anders glad:-)</Text>
+  <main class="">
+    <section class="grid grid-cols-6 pb-10 gap-6 md:pb-20 md:grid-cols-12 md:gap-12">
+      <Image src={hero} alt="Product image of Abdeljalil Olive Oil" class="col-start-1 col-span-6 aspect-square md:col-start-1 md:col-span-12 md:aspect-video lg:h-screen md:w-full object-cover lg:col-start-1 lg:col-span-6" />
+
+      <!-- form start -->
+      <div class="col-start-1 col-span-6 px-5 flex flex-col gap-6 md:col-start-3 md:col-span-8 md:px-0 lg:gap-8 lg:col-start-7 lg:col-span-6 lg:pr-10 lg:pt-25">
+        <div>
+          <Heading>Abdeljalil Olive Oil</Heading>
+          <Text teksttype="manchet" font="heading" color="dark600">From €22.00</Text>
+        </div>
+        <ul class="flex flex-col gap-2.5">
+          <li class="flex items-start gap-2.5">
+            <Image src={oliven} alt="Graphic of olive" class="w-6 h-auto" />
+            <Text>Acidity level of less than 0.4% and rich concentration of polyphenols</Text>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <Image src={oliven} alt="Graphic of olive" class="w-6 h-auto" />
+            <Text>Shipped from Germany: No customs or import fees within the EU</Text>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <Image src={oliven} alt="Graphic of olive" class="w-6 h-auto" />
+            <Text>Subscriber Benefits: Save 10% & Enjoy Always Free Delivery</Text>
+          </li>
+        </ul>
+
+        <!-- Selve formen -->
+        <form>
+          <!-- radio button: single purchase / subscribe -->
+          <div class="flex w-full border border-dark-700 md:border-2 rounded-full">
+            <label class="flex-1 text-center cursor-pointer text-lg md:text-xl lg:text-2xl font-heading">
+              <input type="radio" id="radio-single" name="gruppe1" value="single" class="hidden peer" />
+              <span class="block rounded-l-full pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 text-dark-600 transition duration-400 peer-checked:bg-secondary-500 peer-checked:border-r md:peer-checked:border-r-2 hover:bg-primary-600 peer-checked:hover:bg-secondary-500">Single purchase</span>
+            </label>
+            <label class="flex-1 text-center cursor-pointer text-lg md:text-xl lg:text-2xl font-heading">
+              <input type="radio" id="radio-subscribe" name="gruppe1" value="subscribe" class="hidden peer" checked />
+              <span class="block rounded-r-full pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 text-dark-600 transition duration-400 peer-checked:bg-secondary-500 peer-checked:border-l md:peer-checked:border-l-2 hover:bg-primary-600 peer-checked:hover:bg-secondary-500">Subscribe</span>
+            </label>
+          </div>
+
+          <!-- radio buttons: Quantity -->
+          <div class="flex flex-col gap-2 my-4">
+            <Text>Quantity</Text>
+            <div class="flex w-full gap-2.5">
+              <label class="flex-1 text-center cursor-pointer text-lg md:text-xl lg:text-2xl font-heading">
+                <input type="radio" name="gruppe2" value="22" class="hidden peer quantity-radio" checked />
+                <span class="block rounded-full border border-dark-700 md:border-2 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 text-dark-600 transition duration-400 peer-checked:bg-secondary-500 hover:bg-primary-600 peer-checked:hover:bg-secondary-500">1 x 750 ml</span>
+              </label>
+              <label class="flex-1 text-center cursor-pointer text-lg md:text-xl lg:text-2xl font-heading">
+                <input type="radio" name="gruppe2" value="40" class="hidden peer quantity-radio" />
+                <span class="block rounded-full border border-dark-700 md:border-2 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 text-dark-600 transition duration-400 peer-checked:bg-secondary-500 hover:bg-primary-600 peer-checked:hover:bg-secondary-500">2 x 750 ml</span>
+              </label>
+              <label class="flex-1 text-center cursor-pointer text-lg md:text-xl lg:text-2xl font-heading">
+                <input type="radio" name="gruppe2" value="75" class="hidden peer quantity-radio" />
+                <span class="block rounded-full border border-dark-700 md:border-2 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 text-dark-600 transition duration-400 peer-checked:bg-secondary-500 hover:bg-primary-600 peer-checked:hover:bg-secondary-500">4 x 750 ml</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Select: Frequency -->
+          <div id="frequency-section" class="flex flex-col gap-2 my-4">
+            <Text>Frequency</Text>
+            <select id="frequency-select" class="select select-md md:select-lg w-full rounded-full border border-dark-700 md:border-2 bg-primary-500 pl-4 md:pl-5 text-dark-600 text-lg md:text-xl lg:text-2xl font-heading focus:outline-dark-600 focus:outline">
+              <option disabled selected>Delivery every...</option>
+              <option>Every 1 month</option>
+              <option>Every 2 months</option>
+              <option>Every 3 months</option>
+            </select>
+            <Text stylingclasses="mt-4">Skip, edit or cancel anytime!</Text>
+          </div>
+
+          <!-- CTA: Tilføj til kurv -->
+          <div class="flex flex-col my-4">
+            <Button id="cart-cta" stylingclasses="text-center">
+              <span id="cta-text">Add to cart €22.00</span>
+            </Button>
+          </div>
+        </form>
+
+        <!-- Info tekstbokse -->
+        <div class="">
+          <!-- Knapper med emner -->
+          <div class="join w-full">
+            <input type="radio" name="options" aria-label="Details" class="tab-btn btn-md md:btn-lg join-item btn flex-1 text-lg md:text-xl lg:text-2xl font-heading text-dark-600 checked:text-primary-500 border border-dark-700 md:border-2 bg-primary-500 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 hover:bg-primary-600 checked:bg-accent-700 checked:hover:bg-accent-700 checked:shadow-none focus:ring-0 focus:ring-offset-0 focus:outline-none rounded-tl-3xl rounded-b-none" data-tab="details" checked />
+            <input type="radio" name="options" aria-label="Harvest" class="tab-btn btn-md md:btn-lg join-item btn flex-1 text-lg md:text-xl lg:text-2xl font-heading text-dark-600 checked:text-primary-500 border border-dark-700 md:border-2 bg-primary-500 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 hover:bg-primary-600 checked:bg-accent-700 checked:hover:bg-accent-700 checked:shadow-none focus:ring-0 focus:ring-offset-0 focus:outline-none" data-tab="harvest" />
+            <input type="radio" name="options" aria-label="Use" class="tab-btn btn-md md:btn-lg join-item btn flex-1 text-lg md:text-xl lg:text-2xl font-heading text-dark-600 checked:text-primary-500 border border-dark-700 md:border-2 bg-primary-500 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 hover:bg-primary-600 checked:bg-accent-700 checked:hover:bg-accent-700 checked:shadow-none focus:ring-0 focus:ring-offset-0 focus:outline-none" data-tab="use" />
+            <input type="radio" name="options" aria-label="Shipping" class="tab-btn btn-md md:btn-lg join-item btn flex-1 text-lg md:text-xl lg:text-2xl font-heading text-dark-600 checked:text-primary-500 border border-dark-700 md:border-2 bg-primary-500 pt-1.5 pb-2 md:pt-1.5 md:pb-2.5 hover:bg-primary-600 checked:bg-accent-700 checked:hover:bg-accent-700 checked:shadow-none focus:ring-0 focus:ring-offset-0 focus:outline-none rounded-tr-3xl rounded-b-none" data-tab="shipping" />
+          </div>
+
+          <!-- Tekstboksene til knapperne -->
+          <div class="">
+            <!-- Boks til Details (Default synlig) -->
+            <div id="panel-details" class="tab-panel block p-5 border border-dark-700 md:border-2 rounded-b-3xl w-full">
+              <Text>Produced in Marrakesh, Morocco using Houzia olives that are carefully cold pressed to preserve their natural character. This method highlights the oil’s vibrant profile, with its distinctive peppery and bitter notes.</Text>
+            </div>
+
+            <!-- Boks til Harvest -->
+            <div id="panel-harvest" class="tab-panel hidden p-5 border border-dark-700 md:border-2 rounded-b-3xl w-full">
+              <Text>Harvested by hand in late October and early November, when the olives are still green and early in their ripening cycle. This ensures a richer concentration of polyphenols, which are responsible for the oil's distinctive peppery and bitter notes.</Text>
+            </div>
+
+            <!-- Boks til Use -->
+            <div id="panel-use" class="tab-panel hidden p-5 border border-dark-700 md:border-2 rounded-b-3xl w-full">
+              <Text>Our extra virgin olive oil is a true single-origin product from Morocco. While Moroccan tradition often calls for serving olive oil with warm bread or as a final flourish on soups and other dishes, we encourage you to use our oil in any way you desire. </Text>
+            </div>
+
+            <!-- Boks til Shipping -->
+            <div id="panel-shipping" class="tab-panel hidden p-5 border border-dark-700 md:border-2 rounded-b-3xl w-full">
+              <Text>Our stock is based in Germany and we currently deliver across the European Union and Switzerland, so you can enjoy our products wherever you are in Europe, without any additional customs or import fees.</Text>
+            </div>
+          </div>
+        </div>
+        <!-- Info tekstbokse slut -->
+      </div>
+    </section>
   </main>
 </MainLayout>
+
+<script>
+  // SCRIPT TIL AT STYRE TEKST BOKSENE
+  const buttons = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  buttons.forEach((button) => {
+    button.addEventListener("change", (e) => {
+      const targetTab = (e.target as HTMLInputElement).dataset.tab;
+
+      panels.forEach((panel) => {
+        if (panel.id === `panel-${targetTab}`) {
+          panel.classList.remove("hidden");
+          panel.classList.add("block");
+        } else {
+          panel.classList.remove("block");
+          panel.classList.add("hidden");
+        }
+      });
+    });
+  });
+  // SCRIPT TIL AT STYRE TEKST BOKSENE SLUT
+
+  // SCRIPT TIL FUNKTIONALITET AF FORMULAREN
+  const radioSingle = document.getElementById("radio-single") as HTMLInputElement;
+  const radioSubscribe = document.getElementById("radio-subscribe") as HTMLInputElement;
+  const frequencySection = document.getElementById("frequency-section");
+  const frequencySelect = document.getElementById("frequency-select") as HTMLSelectElement;
+  const quantityRadios = document.querySelectorAll(".quantity-radio");
+  const cartCtaText = document.getElementById("cta-text");
+
+  // Funktion der skjuler eller viser frekvens i formen
+  function toggleFrequency() {
+    if (radioSingle.checked) {
+      frequencySection.classList.add("hidden");
+    } else {
+      frequencySection.classList.remove("hidden");
+    }
+  }
+
+  radioSingle.addEventListener("change", toggleFrequency);
+  radioSubscribe.addEventListener("change", toggleFrequency);
+
+  // Funktion der opdaterer pris og cta tekst
+  function updatePrice() {
+    let basePrice = 0;
+
+    // 1. Find den mængde der er valgt
+    quantityRadios.forEach((radio) => {
+      if ((radio as HTMLInputElement).checked) {
+        basePrice = parseFloat((radio as HTMLInputElement).value);
+      }
+    });
+
+    // 2. Hvis der er valgt subscribe, giv rabat og byg subscribe-tekst
+    if (radioSubscribe.checked) {
+      basePrice = basePrice * 0.9; // 10% rabat
+
+      let frequencyText = "Every month";
+      if (frequencySelect && frequencySelect.selectedIndex > 0) {
+        frequencyText = frequencySelect.options[frequencySelect.selectedIndex].text.toLowerCase();
+      }
+
+      if (cartCtaText) {
+        cartCtaText.textContent = `Subscribe €${basePrice.toFixed(2)} / ${frequencyText}`;
+      }
+    } else {
+      // 3. Hvis der er valgt Single purchase
+      if (cartCtaText) {
+        cartCtaText.textContent = `Add to cart €${basePrice.toFixed(2)}`;
+      }
+    }
+  }
+
+  // Lyt efter ændringer på alle mængde-knapperne og dropdown
+  quantityRadios.forEach((radio) => {
+    radio.addEventListener("change", updatePrice);
+  });
+
+  if (frequencySelect) {
+    frequencySelect.addEventListener("change", updatePrice);
+  }
+
+  // Sørg for at prisen OGSÅ opdaterer sig, når man skifter mellem Single og Subscribe
+  radioSingle.addEventListener("change", updatePrice);
+  radioSubscribe.addEventListener("change", updatePrice);
+
+  // KØR VED LOAD
+  toggleFrequency();
+  updatePrice();
+</script>
