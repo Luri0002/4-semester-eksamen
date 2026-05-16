@@ -1,19 +1,19 @@
 ---
-const { image, heading, olives = [] } = Astro.props;
+const { image, heading, color = "secondary", olives = [] } = Astro.props;
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
-
 ---
 
 <div class="flex flex-col items-center gap-10">
-<Image src={image} alt={heading}></Image>
-<Heading htmlheading="h4" size="small" font="display" color="secondary">{heading}</Heading>
+  <Image src={image} alt={heading} />
 
-<!-- olives -->
-    {
-      olives.map((olive, index) => (
-        <img src={olive.src} alt={`olive ${index + 1}`} />
-      ))
-    }
+  <Heading htmlheading="h4" size="small" font="display" color={color}>
+    {heading}
+  </Heading>
 
+  {
+    olives.map((olive, index) => (
+      <img src={olive.src} alt={`olive ${index + 1}`} />
+    ))
+  }
 </div>
