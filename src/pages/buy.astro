@@ -6,6 +6,8 @@ import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
 import oliven from "../assets/images/oliven.svg";
 import hero from "../assets/images/buy_herobillede.webp";
+import FaqSection from "../components/FaqSection.astro";
+import ProductSection from "../components/ProductSection.astro";
 ---
 
 <MainLayout title="Buy Subscribe">
@@ -123,6 +125,14 @@ import hero from "../assets/images/buy_herobillede.webp";
         <!-- Info tekstbokse slut -->
       </div>
     </section>
+
+    <!-- FAQ section start -->
+    <FaqSection />
+    <!-- FAQ section slut -->
+
+    <!-- Product section start -->
+    <ProductSection cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
+    <!-- Product section slut -->
   </main>
 </MainLayout>
 
