@@ -14,8 +14,9 @@
   /*Farver */
 
   /* Primary */
-  --color-primary-500: #dee0c8;
   --color-primary-200: #f1f3d9;
+  --color-primary-500: #dee0c8;
+  --color-primary-600: #aeaf9c;
 
   /* Secondary */
   --color-secondary-500: #cbbf42;
