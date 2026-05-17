@@ -26,7 +26,7 @@ import oliven from "../assets/images/oliven.svg";
 <MainLayout title="Homepage">
   <main>
     <!-- hero start -->
-    <section class="relative aspect-2/3 md:aspect-video lg:aspect-2/1 w-full overflow-hidden">
+    <section class="aspect-2/3 md:aspect-video lg:aspect-2/1 w-full overflow-hidden sticky top-0 z-10">
       <!-- hero billeder start -->
       <!-- Billede 1 (Aktivt fra start) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-100 z-0">
@@ -47,7 +47,7 @@ import oliven from "../assets/images/oliven.svg";
       <div class="absolute inset-0 bg-secondary-900/40 z-10"></div>
 
       <!-- grid med copy og cta start -->
-      <div class="relative z-20 grid grid-cols-6 px-5 pb-10 gap-2.5 auto-rows-min h-full content-end md:items-center lg:items-start md:pb-20 md:px-10 md:grid-cols-12 md:gap-5">
+      <div class="relative z-20 grid grid-cols-6 px-5 pb-10 gap-2.5 auto-rows-min h-full content-end md:items-center lg:items-start md:pb-20 md:px-10 md:grid-cols-12 md:gap-5 animate-fade-up animate-duration-900 animate-ease-in-out">
         <div class="col-start-1 col-span-6 md:col-span-8">
           <Heading size="xlarge" color="primary200">MOROCCAN EXTRA VIRGIN OLIVE OIL</Heading>
         </div>
@@ -60,89 +60,91 @@ import oliven from "../assets/images/oliven.svg";
     </section>
     <!-- hero slut -->
 
-    <!-- Machet block start -->
-    <section class="grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 md:grid-cols-12 md:gap-5">
-      <div class="col-start-1 col-span-6 md:col-span-8">
-        <Heading htmlheading="h2" size="small" color="dark600" font="display">When Quality Has a Face</Heading>
-        <div class="col-start-1 col-span-6 flex flex-col items-start gap-4 md:col-span-8 lg:gap-5">
-          <Text teksttype="manchet" font="heading" color="dark600">Our approach is simple: to produce world-class olive oil while healing the earth. By combining regenerative practices with our century-old, rare Haouzia trees native to Marrakesh’s Haouz province, our family creates a taste that is both sustainable and scientifically unique to this region. Experience the dedication of Abdeljalil and the living legacy of our Moroccan groves.</Text>
-          <Button variant="secondary" href="/explore">Step Into the Grove</Button>
+    <div class="relative z-30 bg-primary-500">
+      <!-- Machet block start -->
+      <section class="grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 md:grid-cols-12 md:gap-5">
+        <div class="col-start-1 col-span-6 md:col-span-8">
+          <Heading htmlheading="h2" size="small" color="dark600" font="display">When Quality Has a Face</Heading>
+          <div class="col-start-1 col-span-6 flex flex-col items-start gap-4 md:col-span-8 lg:gap-5">
+            <Text teksttype="manchet" font="heading" color="dark600">Our approach is simple: to produce world-class olive oil while healing the earth. By combining regenerative practices with our century-old, rare Haouzia trees native to Marrakesh’s Haouz province, our family creates a taste that is both sustainable and scientifically unique to this region. Experience the dedication of Abdeljalil and the living legacy of our Moroccan groves.</Text>
+            <Button variant="secondary" href="/explore">Step Into the Grove</Button>
+          </div>
         </div>
-      </div>
-    </section>
-    <!-- Machet block slut -->
+      </section>
+      <!-- Machet block slut -->
 
-    <!-- Kvaliteter block start -->
-    <section class="px-5 py-10 md:px-10 md:py-20">
-      <div class="bg-secondary-500 rounded-3xl grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 lg:grid-cols-4 md:gap-10">
-        <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-1 lg:gap-5">
-          <Image src={gif1} alt="Graphic of the Moroccan sun" class="h-[146.5px] md:h-41.5 w-auto" />
-          <Heading htmlheading="h5" size="small" color="dark900" font="display">moroccan sun</Heading>
-        </div>
+      <!-- Kvaliteter block start -->
+      <section class="px-5 py-10 md:px-10 md:py-20">
+        <div class="bg-secondary-500 rounded-3xl grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 lg:grid-cols-4 md:gap-10">
+          <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-1 lg:gap-5">
+            <Image src={gif1} alt="Graphic of the Moroccan sun" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Heading htmlheading="h5" size="small" color="dark900" font="display">moroccan sun</Heading>
+          </div>
 
-        <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-2 lg:gap-5">
-          <Image src={gif2} alt="Graphic of dripping haouzia olives" class="h-[146.5px] md:h-41.5 w-auto" />
-          <Heading htmlheading="h5" size="small" color="dark900" font="display">rare HAOZIA OLIVES</Heading>
-        </div>
+          <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-2 lg:gap-5">
+            <Image src={gif2} alt="Graphic of dripping haouzia olives" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Heading htmlheading="h5" size="small" color="dark900" font="display">rare HAOZIA OLIVES</Heading>
+          </div>
 
-        <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-3 lg:gap-5">
-          <Image src={gif3} alt="Graphic of a hand with an olive branch" class="h-[146.5px] md:h-41.5 w-auto" />
-          <Heading htmlheading="h5" size="small" color="dark900" font="display">seasonal work</Heading>
-        </div>
+          <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-3 lg:gap-5">
+            <Image src={gif3} alt="Graphic of a hand with an olive branch" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Heading htmlheading="h5" size="small" color="dark900" font="display">seasonal work</Heading>
+          </div>
 
-        <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-4 lg:gap-5">
-          <Image src={gif4} alt="Graphic of family tradition" class="h-[146.5px] md:h-41.5 w-auto" />
-          <Heading htmlheading="h5" size="small" color="dark900" font="display">family tradition</Heading>
+          <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-4 lg:gap-5">
+            <Image src={gif4} alt="Graphic of family tradition" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Heading htmlheading="h5" size="small" color="dark900" font="display">family tradition</Heading>
+          </div>
         </div>
-      </div>
-      <!-- Kvaliteter block slut -->
-    </section>
+        <!-- Kvaliteter block slut -->
+      </section>
 
-    <!-- Timeline section start -->
-    <section id="timeline-section" class="relative md:grid md:grid-cols-2">
-      <div class="flex flex-col items-center gap-5 py-10 justify-center md:sticky md:top-0 md:h-screen md:py-0 z-50">
-        <Heading htmlheading="h2" size="xlarge">177</Heading>
-        <Text teksttype="manchet" font="heading">Days until harvest</Text>
-        <div class="flex flex-col items-center gap-2.5">
-          <Text>Harvest Window: Oct 25 – Nov 15</Text>
-          <Text>Current Stage: Fruit Set</Text>
+      <!-- Timeline section start -->
+      <section id="timeline-section" class="relative md:grid md:grid-cols-2">
+        <div class="flex flex-col items-center gap-5 py-10 justify-center md:sticky md:top-0 md:h-screen md:py-0 z-50">
+          <Heading htmlheading="h2" size="xlarge">177</Heading>
+          <Text teksttype="manchet" font="heading">Days until harvest</Text>
+          <div class="flex flex-col items-center gap-2.5">
+            <Text>Harvest Window: Oct 25 – Nov 15</Text>
+            <Text>Current Stage: Fruit Set</Text>
+          </div>
+          <Button variant="primary" href="/our_oliveoil">More about our olive oil</Button>
+          <!-- Oliven "tidslinjen" på desktop -->
+          <div class="olive-icon hidden md:block absolute top-0 left-full -translate-x-1/2 w-16 h-auto pointer-events-none">
+            <Image src={oliven} alt="Grafik af oliven" class="w-full h-auto" />
+          </div>
+          <!-- Oliven "tidslinjen" på desktop stop -->
         </div>
-        <Button variant="primary" href="/our_oliveoil">More about our olive oil</Button>
-        <!-- Oliven "tidslinjen" på desktop -->
-        <div class="olive-icon hidden md:block absolute top-0 left-full -translate-x-1/2 w-16 h-auto pointer-events-none">
-          <Image src={oliven} alt="Grafik af oliven" class="w-full h-auto" />
-        </div>
-        <!-- Oliven "tidslinjen" på desktop stop -->
-      </div>
-      <ul>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede1.webp')">
-          <TimelineCard graphic={dormancy} graphicAlt="Graphic of the moon and sleep symbols: zzz" stage="Dormancy" season="Mid-Nov – mid-Feb" description="Trees rest and store energy." />
-        </li>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede2.webp')">
-          <TimelineCard rightaligned={true} graphic={budandflower} graphicAlt="Graphic of small olive buds and flowers" stage="Bud & Flower" season="Mid-Feb – Apr" description="Buds swell; delicate blossoms form." />
-        </li>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede3.webp')">
-          <TimelineCard graphic={fruitset} graphicAlt="Graphic of small olives" stage="Fruit Set" season="May – Jun" description="Tiny olives develop after pollination." />
-        </li>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede4.webp')">
-          <TimelineCard rightaligned={true} graphic={pithardening} graphicAlt="Graphic of olive pit" stage="Pit Hardening" season="July" description="Stones form inside the olives." />
-        </li>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede5.webp')">
-          <TimelineCard graphic={flavorsintensify} graphicAlt="Graphic of olive width rising oil contents" stage="Flavors intensify" season="Mid-Feb – Apr" description="Oil content rises; flavors form." />
-        </li>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede6.webp')">
-          <TimelineCard rightaligned={true} graphic={maturation} graphicAlt="Graphic of the moroccan sun" stage="Maturation" season="Sept – Oct 24" description="Aromas deepen; texture and taste round out." />
-        </li>
-        <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede7.webp')">
-          <TimelineCard graphic={harvest} graphicAlt="Graphic of the harvest" stage="Harvest" season="Oct 25 – Nov 15" description="Hand-picked within the optimal window." />
-        </li>
-      </ul>
-    </section>
-    <!-- Timeline section slut -->
+        <ul>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede1.webp')">
+            <TimelineCard graphic={dormancy} graphicAlt="Graphic of the moon and sleep symbols: zzz" stage="Dormancy" season="Mid-Nov – mid-Feb" description="Trees rest and store energy." />
+          </li>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede2.webp')">
+            <TimelineCard rightaligned={true} graphic={budandflower} graphicAlt="Graphic of small olive buds and flowers" stage="Bud & Flower" season="Mid-Feb – Apr" description="Buds swell; delicate blossoms form." />
+          </li>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede3.webp')">
+            <TimelineCard graphic={fruitset} graphicAlt="Graphic of small olives" stage="Fruit Set" season="May – Jun" description="Tiny olives develop after pollination." />
+          </li>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede4.webp')">
+            <TimelineCard rightaligned={true} graphic={pithardening} graphicAlt="Graphic of olive pit" stage="Pit Hardening" season="July" description="Stones form inside the olives." />
+          </li>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede5.webp')">
+            <TimelineCard graphic={flavorsintensify} graphicAlt="Graphic of olive width rising oil contents" stage="Flavors intensify" season="Mid-Feb – Apr" description="Oil content rises; flavors form." />
+          </li>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede6.webp')">
+            <TimelineCard rightaligned={true} graphic={maturation} graphicAlt="Graphic of the moroccan sun" stage="Maturation" season="Sept – Oct 24" description="Aromas deepen; texture and taste round out." />
+          </li>
+          <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede7.webp')">
+            <TimelineCard graphic={harvest} graphicAlt="Graphic of the harvest" stage="Harvest" season="Oct 25 – Nov 15" description="Hand-picked within the optimal window." />
+          </li>
+        </ul>
+      </section>
+      <!-- Timeline section slut -->
 
-    <!-- Product section start -->
-    <ProductSection imageFirst={true} cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
-    <!-- Product section slut -->
+      <!-- Product section start -->
+      <ProductSection imageFirst={true} cardTitle="Abdeljalil Olive Oil" cardText="Crafted from 100% Haouzia olives, cultivated on family-owned farms, our oil offers an intense green fruitiness with distinct notes of artichoke, green almond, and fresh tomato with a peppery finish." buttonHref="/our_oliveoil" buttonText="More about our olive oil" />
+      <!-- Product section slut -->
+    </div>
   </main>
 
   <script>

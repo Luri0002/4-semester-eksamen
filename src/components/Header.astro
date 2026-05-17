@@ -12,30 +12,29 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
 <header x-data="{ showMenu: false }" class="fixed top-0 left-0 z-50 w-full bg-transparent">
   <!-- nav bar start -->
   <div class="flex justify-between items-center px-5 py-5 md:px-10 md:py-10">
-
     <!-- logo + text svg start -->
-    <div class="flex flex-row items-center"> 
-    <!-- logo start -->
-    <div class="group relative block w-24 h-24 lg:w-32 lg:h-32"> 
-    <a href="/">
-      <!-- default logo -->
-      <img id="logo" src="/images/logo.svg" alt="Logo" class="absolute inset-0 h-full object-contain group-hover:opacity-0 transition-all duration-300" />
+    <div class="flex flex-row items-center">
+      <!-- logo start -->
+      <div id="logo-container" class="group relative block w-24 h-24 lg:w-32 lg:h-32 transition-all duration-300">
+        <a href="/">
+          <!-- default logo -->
+          <img id="logo" src="/images/logo.svg" alt="Logo" class="absolute inset-0 h-full object-contain group-hover:opacity-0 transition-all duration-300" />
 
-      <!-- hover logo -->
-      <img id="logo_hover" src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    </a>
-    </div>
-    <!-- logo slut -->
-     <!-- Logo Type (Kun på forsiden OG kun før scroll) -->
-    {isHome && (
-    <div>
-    <img id="logo-text" src="/images/lille_logo_header.svg" alt="Abdeljalil olive oil" class="w-40 -ml-2 lg:w-64 transition-all duration-300"  />
-    </div>
-    )}
-    
+          <!-- hover logo -->
+          <img id="logo_hover" src="/images/logo_hover.svg" alt="Logo Hover" class="absolute inset-0 h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        </a>
+      </div>
+      <!-- logo slut -->
+      <!-- Logo Type (Kun på forsiden OG kun før scroll) -->
+      {
+        isHome && (
+          <div>
+            <img id="logo-text" src="/images/lille_logo_header.svg" alt="Abdeljalil olive oil" class="w-40 -ml-2 lg:w-64 transition-all duration-300" />
+          </div>
+        )
+      }
     </div>
     <!-- logo + text svg slut -->
-    
 
     <!-- menu button -->
     <button @click="showMenu = true" class="w-24 lg:w-32 hover:-rotate-10 transition-transform">
@@ -45,7 +44,7 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
   <!-- nav bar slut -->
 
   <!-- fullscreen menu start -->
-  <div x-show="showMenu" class="fixed inset-0 z-50 bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
+  <div x-show="showMenu" class="fixed inset-0 z-70 bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
     <!-- top bar start-->
     <div class="flex items-center justify-between">
       <!-- logo start -->
@@ -131,36 +130,31 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
 </header>
 
 <!-- javascript for "abdeljalill olive oil" transition i menu -->
- <script>
-  const logo = document.querySelector('#logo');
+<script>
+  const logoContainer = document.querySelector("#logo-container");
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      logo.classList.add('scale-75');
-    } else {
-      logo.classList.remove('scale-75');
-    }
-  });
-
-  const logo_hover = document.querySelector('#logo_hover');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      logo_hover.classList.add('scale-75');
-    } else {
-      logo_hover.classList.remove('scale-75');
-    }
-  });
-
-   // Vi tilføjer et check, så scriptet kun kører hvis logo-text findes
-  const logoText = document.querySelector('#logo-text');
-  
-  if (logoText) {
-    window.addEventListener('scroll', () => {
+  if (logoContainer) {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
-        logoText.classList.add('max-w-0', 'opacity-0');
+        // Ved scroll:
+        logoContainer.classList.remove("w-24", "h-24", "lg:w-32", "lg:h-32");
+        logoContainer.classList.add("w-16", "h-16", "lg:w-20", "lg:h-20");
       } else {
-        logoText.classList.remove('max-w-0', 'opacity-0');
+        logoContainer.classList.remove("w-16", "h-16", "lg:w-20", "lg:h-20");
+        logoContainer.classList.add("w-24", "h-24", "lg:w-32", "lg:h-32");
+      }
+    });
+  }
+
+  // Vi tilføjer et check, så scriptet kun kører hvis logo-text findes
+  const logoText = document.querySelector("#logo-text");
+
+  if (logoText) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        logoText.classList.add("max-w-0", "opacity-0");
+      } else {
+        logoText.classList.remove("max-w-0", "opacity-0");
       }
     });
   }
