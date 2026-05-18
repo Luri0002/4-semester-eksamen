@@ -1,17 +1,20 @@
 ---
 const { title, content, name = "faq-accordion" } = Astro.props;
 import Text from "./Text.astro";
+
+const id = title.toLowerCase().replace(/\s+/g, "-");
+const titleId = `${id}-title`;
 ---
 
 <div class="faq-item collapse collapse-plus text-dark-600 rounded-none border-b md:border-b-2 border-dark-600 cursor-pointer last:border-b-0">
   <input
     type="checkbox"
-    aria-labelledby={title}
+    aria-labelledby={titleId}
     name={name}
     class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
   />
 
-  <div class="collapse-title" id={title}>
+  <div class="collapse-title" id={titleId}>
     <Text teksttype="manchet" font="heading" color="dark600">
       {title}
     </Text>
