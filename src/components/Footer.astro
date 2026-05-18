@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/images/logo.svg";
-import biglogo from "../assets/images/giga_logo_footer.svg"
+import biglogo from "../assets/images/giga_logo_footer.svg";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Button from "../components/Button.astro";
@@ -9,80 +9,66 @@ import Link from "../components/Link.astro";
 ---
 
 <footer class="relative overflow-hidden">
+  <!-- top newsletter section start-->
+  <section class="bg-secondary-500 px-5 py-10 md:px-10">
+    <!-- newsletter kolonne start-->
+    <div class="grid grid-cols-6 gap-2.5 md:grid-cols-12 md:gap-5">
+      <!-- newsletter content start-->
+      <div class="col-start-1 col-span-6 md:col-start-6 md:col-span-7 lg:col-start-7 lg:col-span-6">
+        <Heading htmlheading="h4" size="small" font="display"> Get a taste of Morocco in your inbox!</Heading>
+        <Text teksttype="manchet" font="heading" stylingclasses="mb-5">Stay connected to the rhythm of our olive harvest by subscribing to our newsletter</Text>
 
-<!-- top newsletter section start-->
-<section class="bg-secondary-500 px-5 py-10 md:px-10 md:py-20">
-    
-<!-- newsletter kolonne start-->
-<div class="grid grid-cols-6 gap-2.5 md:grid-cols-12 md:gap-5">
+        <!-- Email Input start -->
+        <div class="flex flex-col gap-2.5">
+          <Text>Email address:</Text>
+          <div class="flex gap-2.5 items-center">
+            <input type="email" placeholder="Example@mail.com" class="flex-1 border md:border-2 border-dark-700 text-dark-700/50 placeholder-dark-700/50 bg-transparent rounded-full px-4 py-2 md:px-5 md:py-2.5" />
+            <Button variant="secondary">Get a Taste</Button>
+          </div>
+        </div>
+      </div>
+      <!-- newsletter content start-->
+    </div>
+    <!-- newsletter kolonne slut-->
+  </section>
+  <!-- top newsletter section slut-->
 
-<!-- newsletter content start-->
-<div class="col-start-1 col-span-6 md:col-start-7 md:col-span-6">
-    
-    <Heading htmlheading="h4" size="small" font="display" stylingclasses="md:mb-2.5"> Get a taste of Morocco in your inbox!</Heading>
-    
-    <Text teksttype = "manchet" font = "heading" stylingclasses="mb-5 md:mb-10">Stay connected to the rhythm of our olive harvest by subscribing to our newsletter</Text>
+  <!-- bottom footer start-->
+  <section class="relative bg-dark-500 px-5 pt-10 md:px-10">
+    <!-- footer info start-->
+    <div class="pb-10 md:grid md:grid-cols-12 md:gap-5">
+      <!-- Meet us -->
+      <div class="flex flex-col pb-10 md:pb-0 md:col-start-6 md:col-span-3 lg:col-start-7">
+        <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="md:mb-2">Meet us</Heading>
+        <Link href="https://www.instagram.com/abdeljaliloliveoil?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</Link>
+        <Link href="mailto:info@abdeljaliloliveoil.com">info@abdeljaliloliveoil.com</Link>
+        <Text color="secondary400">Bertha-von-Suttner-Weg 10<br />47877 Willich. Germany</Text>
+      </div>
 
-    <!-- Email Input start -->
-<div class="grid grid-cols-6 gap-2.5"> 
-    <Text stylingclasses="col-span-6">Email address:</Text>
-    <input type="email" placeholder="Example@mail.com" class="col-span-6 md:col-span-4 border md:border-2 border-dark-700 text-dark-700/50 placeholder-dark-700/50 bg-transparent rounded-full px-4 py-2 md:px-5 md:py-2.5"/>
-    <!-- Email Input slut -->
-    <Button variant="secondary" stylingclasses="col-span-2 md:col-span-2 text-center">Get a Taste</Button>    
-</div>   
-</div>
-<!-- newsletter content start-->
+      <!-- Good to know -->
+      <div class="flex flex-col md:col-start-10 md:col-span-3">
+        <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="md:mb-2">Good to know</Heading>
+        <Link>Impressum</Link>
+        <Link>Privacy Policy</Link>
+        <Link>Terms & Condition</Link>
+      </div>
+    </div>
+    <!-- footer info slut-->
 
-</div>
-<!-- newsletter kolonne slut-->
-
-</section>
-<!-- top newsletter section slut-->
-
-<!-- bottom footer start-->
-<section class="relative bg-dark-500 px-5 pt-10 md:px-10 md:pt-20">
-
-<!-- footer info start-->
-<div class="pb-10 md:grid md:grid-cols-12 md:gap-5">
-
-  <!-- Meet us -->
-  <div class="flex flex-col md:col-start-6 md:col-span-3 lg:col-start-7"> 
-    <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="md:mb-2">Meet us</Heading>
-    <Link>Instagram</Link>
-    <Link>info@abdeljaliloliveoil.com</Link>
-    <Text color="secondary400" stylingclasses="pb-10">Bertha-von-Suttner-Weg 10<br />47877 Willich. Germany</Text>
-  </div> 
-
-  <!-- Good to know -->
-  <div class="flex flex-col md:col-start-10 md:col-span-3"> 
-    <Heading htmlheading="h4" size="small" font="display" color="secondary400" stylingclasses="md:mb-2">Good to know</Heading>
-    <Link>Impressum</Link>
-    <Link>Privacy Policy</Link>
-    <Link>Terms & Condition</Link>
-  </div> 
-
-</div>
-<!-- footer info slut-->
-
-
-<!-- Abdeljalil face i desktop -->
+    <!-- Abdeljalil face i desktop -->
     <div class="hidden lg:block absolute left-10 -top-72">
-      <Image src={logo} alt="Illustration of Abdeljalil" class="w-85"/>
+      <Image src={logo} alt="Illustration of Abdeljalil" class="w-85" />
     </div>
 
-<!-- Abdeljalil face i mobil -->
+    <!-- Abdeljalil face i mobil -->
     <div class="flex justify-center lg:hidden mb-10">
-      <Image src={logo}  alt="Illustration of Abdeljalil" class="w-50"/>
+      <Image src={logo} alt="Illustration of Abdeljalil" class="w-50" />
     </div>
 
     <!-- big logo + copyright start -->
     <Image src={biglogo} alt="abdeljalil olive oil logo" />
-    <Text teksttype="konsultativ2" color="light" stylingclasses="pb-10">
-      © 2026, Abdeljalil Olive Oil.
-    </Text>
+    <Text teksttype="konsultativ2" color="light" stylingclasses="pb-5"> © 2026, Abdeljalil Olive Oil. </Text>
     <!-- big logo + copyright slut -->
-
-</section>
-<!-- bottom footer slut-->
-
+  </section>
+  <!-- bottom footer slut-->
 </footer>
