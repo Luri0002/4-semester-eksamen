@@ -16,7 +16,7 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
     <!-- logo + text svg start -->
     <div class="flex flex-row items-center"> 
     <!-- logo start -->
-    <div class="group relative block w-24 h-24 lg:w-32 lg:h-32"> 
+    <div id="logo-container" class="group relative block w-24 h-24 lg:w-32 lg:h-32 transition-all duration-300"> 
     <a href="/">
       <!-- default logo -->
       <img id="logo" src="/images/logo.svg" alt="Logo" class="absolute inset-0 h-full object-contain group-hover:opacity-0 transition-all duration-300" />
@@ -45,7 +45,7 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
   <!-- nav bar slut -->
 
   <!-- fullscreen menu start -->
-  <div x-show="showMenu" class="fixed inset-0 z-50 bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
+  <div x-show="showMenu" class="fixed inset-0 flex flex-col bg-secondary-500 px-5 py-5 md:px-10 md:py-10">
     <!-- top bar start-->
     <div class="flex items-center justify-between">
       <!-- logo start -->
@@ -66,7 +66,7 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
     <!-- top bar slut-->
 
     <!-- content start-->
-    <div class="mt-5 lg:mt-10 grid grid-cols-6 lg:grid-cols-12 items-center">
+    <div class="mt-auto grid grid-cols-6 lg:grid-cols-12 items-end">
       <!-- left side start-->
       <div class="order-2 lg:order-1 col-start-1 col-span-6 lg:col-span-4">
         <Text teksttype="konsultativ" font="display" color="dark600" stylingclasses="mb-2.5">Our craft takes time</Text>
@@ -114,7 +114,7 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
           <!-- My Abdeljalil -->
           <li>
             <a href="/" class="group inline-block">
-              <div class="relative inline-block md:mb-5 lg:mb-10">
+              <div class="relative inline-block">
                 <Heading htmlheading="h4" size="large" font="display" stylingclasses="transition-colors duration-300 group-hover:text-secondary-900">My Abdeljalil</Heading>
                 <!-- underline svg -->
                 <img src="/images/underline.svg" alt="underline" class="absolute left-0 bottom-2 w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -132,25 +132,21 @@ import fullscreen_menubillede from "../assets/images/fullscreen_menubillede.webp
 
 <!-- javascript for "abdeljalill olive oil" transition i menu -->
  <script>
-  const logo = document.querySelector('#logo');
+const logoContainer = document.querySelector("#logo-container"); 
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      logo.classList.add('scale-75');
-    } else {
-      logo.classList.remove('scale-75');
-    }
-  });
+if (logoContainer) { 
+window.addEventListener("scroll", () => { 
+if (window.scrollY > 100) { 
 
-  const logo_hover = document.querySelector('#logo_hover');
+// Når der scroles: Gør logo-containeren mindre 
+logoContainer.classList.remove("w-24", "h-24", "lg:w-32", "lg:h-32"); logoContainer.classList.add("w-16", "h-16", "lg:w-20", "lg:h-20"); 
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      logo_hover.classList.add('scale-75');
-    } else {
-      logo_hover.classList.remove('scale-75');
-    }
-  });
+} else { 
+// Når man er i toppen: Gå tilbage til oprindelig størrelse 
+logoContainer.classList.remove("w-16", "h-16", "lg:w-20", "lg:h-20"); logoContainer.classList.add("w-24", "h-24", "lg:w-32", "lg:h-32"); 
+} 
+}); 
+}
 
    // Vi tilføjer et check, så scriptet kun kører hvis logo-text findes
   const logoText = document.querySelector('#logo-text');
