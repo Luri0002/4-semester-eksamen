@@ -21,6 +21,11 @@ import flavorsintensify from "../assets/images/flavorsintensify.svg";
 import maturation from "../assets/images/maturation.svg";
 import harvest from "../assets/images/harvest.svg";
 import oliven from "../assets/images/oliven.svg";
+const harvestDate = new Date("2026-10-25T00:00:00");
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const diffTime = harvestDate.getTime() - today.getTime();
+const daysUntilHarvest = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 ---
 
 <MainLayout title="Homepage">
@@ -78,22 +83,22 @@ import oliven from "../assets/images/oliven.svg";
         <div class="bg-secondary-500 rounded-3xl grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 lg:grid-cols-4 md:gap-10">
           <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-1 lg:gap-5">
             <Image src={gif1} alt="Graphic of the Moroccan sun" class="h-[146.5px] md:h-41.5 w-auto" />
-            <Heading htmlheading="h5" size="small" color="dark900" font="display">moroccan sun</Heading>
+            <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">moroccan sun</Heading>
           </div>
 
           <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-2 lg:gap-5">
             <Image src={gif2} alt="Graphic of dripping haouzia olives" class="h-[146.5px] md:h-41.5 w-auto" />
-            <Heading htmlheading="h5" size="small" color="dark900" font="display">rare HAOZIA OLIVES</Heading>
+            <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">rare HAOZIA OLIVES</Heading>
           </div>
 
           <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-3 lg:gap-5">
             <Image src={gif3} alt="Graphic of a hand with an olive branch" class="h-[146.5px] md:h-41.5 w-auto" />
-            <Heading htmlheading="h5" size="small" color="dark900" font="display">seasonal work</Heading>
+            <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">seasonal work</Heading>
           </div>
 
           <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-4 lg:gap-5">
             <Image src={gif4} alt="Graphic of family tradition" class="h-[146.5px] md:h-41.5 w-auto" />
-            <Heading htmlheading="h5" size="small" color="dark900" font="display">family tradition</Heading>
+            <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">family tradition</Heading>
           </div>
         </div>
         <!-- Kvaliteter block slut -->
@@ -102,7 +107,7 @@ import oliven from "../assets/images/oliven.svg";
       <!-- Timeline section start -->
       <section id="timeline-section" class="relative md:grid md:grid-cols-2">
         <div class="flex flex-col items-center gap-5 py-10 justify-center md:sticky md:top-0 md:h-screen md:py-0 z-50">
-          <Heading htmlheading="h2" size="xlarge">177</Heading>
+          <Heading htmlheading="h2" size="xlarge">{daysUntilHarvest}</Heading>
           <Text teksttype="manchet" font="heading">Days until harvest</Text>
           <div class="flex flex-col items-center gap-2.5">
             <Text>Harvest Window: Oct 25 – Nov 15</Text>
