@@ -35,17 +35,17 @@ const daysUntilHarvest = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       <!-- hero billeder start -->
       <!-- Billede 1 (Aktivt fra start) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-100 z-0">
-        <Image src={herobillede1} alt="Olive plantation in Morocco" class="object-cover w-full h-full" />
+        <Image src={herobillede1} alt="Olive plantation in Morocco" class="object-cover w-full h-full" loading="eager" fetchpriority="high"/>
       </div>
 
       <!-- Billede 2 (Skjult) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
-        <Image src={herobillede2} alt="Haouzia olive tree in Marrakesh" class="object-cover w-full h-full" />
+        <Image src={herobillede2} alt="Haouzia olive tree in Marrakesh" class="object-cover w-full h-full" loading="lazy"/>
       </div>
 
       <!-- Billede 3 (Skjult) -->
       <div class="hero-image absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
-        <Image src={herobillede3} alt="Family working in the grove in Morocco" class="object-cover w-full h-full" />
+        <Image src={herobillede3} alt="Family working in the grove in Morocco" class="object-cover w-full h-full" loading="lazy"/>
       </div>
 
       <!-- Overlay -->
