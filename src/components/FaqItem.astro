@@ -1,8 +1,13 @@
 ---
 const { title, content, name = "faq-accordion" } = Astro.props;
 import Text from "./Text.astro";
+import Heading from "./Heading.astro";
 
-const id = title.toLowerCase().replace(/\s+/g, "-");
+const id = title
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "");
+
 const titleId = `${id}-title`;
 ---
 
@@ -15,9 +20,7 @@ const titleId = `${id}-title`;
   />
 
   <div class="collapse-title" id={titleId}>
-    <Text teksttype="manchet" font="heading" color="dark600">
-      {title}
-    </Text>
+    <Heading htmlheading="h4" size="xsmall">{title}</Heading>
   </div>
 
   <div class="collapse-content md:max-w-3/4">

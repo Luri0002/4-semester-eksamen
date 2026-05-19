@@ -34,7 +34,7 @@ import ProductSection from "../components/ProductSection.astro";
 <!-- text-picture start -->
 <div class="py-5 md:pt-10 md:pb-20 col-start-1 col-span-6 md:col-start-2 md:col-span-5 lg:col-start-4 lg:col-span-4"> 
 <Text stylingclasses="mb-5 lg:mb-10">This estimation is based on our extensive experience in producing olive oil from our family's farm and distributing it to family and friends inside and outside Morocco. The consistency of our process and the health of our olive trees contribute to this result. Our previous harvests have undergone rigorous testing, confirming our ability to  produce an oil that far exceeds the strict criteria for extra virgin  which requires an acidity level of 0.8% or less.</Text>
-<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" class="" />
+<Image src={ouroliveoil_herobillede} alt="Picture of an olive branch" loading="eager" fetchpriority="high" />
 </div>
 <!-- text-picture slut -->
 
@@ -124,7 +124,7 @@ Our careful production process ensures a low acidity, reflecting our commitment 
     <Text stylingclasses="mt-2.5 lg:mt-5">Although this produces a lower yield, it results in a higher concentration of polyphenols, giving the oil its distinctive peppery and bitter character. </Text>
     </div>
     <!-- div med heading + text slut -->
-      <Image src={hero_billede1} alt="Olive trees grove during harvesting" class="mt-5 lg:mt-10"/>
+      <Image src={hero_billede1} alt="Olive trees grove during harvesting" loading="lazy" class="mt-5 lg:mt-10"/>
     </div>
   <!-- item 1 slut-->
   
@@ -137,7 +137,7 @@ Our careful production process ensures a low acidity, reflecting our commitment 
     <Text>All olives are hand-picked and transported by truck to our processing partner in Sidi Bou Othmane, located just two hours from our farm. This close distance allows the olives to be processed within 24 hours, preserving freshness and quality. </Text>
     </div>
     <!-- div med heading + text slut -->
-      <Image src={from_tree_to_bottle2} alt="Abdeljalil's family on the olive grove" class="mt-5 lg:mt-10"/>
+      <Image src={from_tree_to_bottle2} alt="Abdeljalil's family on the olive grove" loading="lazy" class="mt-5 lg:mt-10"/>
     </div>
   <!-- item 2 slut-->
   
@@ -151,7 +151,7 @@ Our careful production process ensures a low acidity, reflecting our commitment 
     <Text stylingclasses="mt-2.5 lg:mt-5">The cleaned olives are then crushed and kneaded for at least 40 minutes. Processing in small batches helps preserve aroma, antioxidants, and nutrients, creating a paste made of oil, water, and olive pulp. </Text>
   </div>
     <!-- div med heading + text slut -->
-      <Image src={from_tree_to_bottle3} alt="Olives cleaning and crushing process" class="mt-5"/>
+      <Image src={from_tree_to_bottle3} alt="Olives cleaning and crushing process" loading="lazy" class="mt-5"/>
   </div>
 </div>
 <!-- item 3 slut-->
@@ -166,7 +166,7 @@ Our careful production process ensures a low acidity, reflecting our commitment 
     <Text stylingclasses="mt-2.5 lg:mt-5">A second vertical centrifuge further refines the oil by removing remaining water and fine particles, resulting in pure extra virgin olive oil.</Text>
   </div>
     <!-- div med heading + text slut -->
-      <Image src={from_tree_to_bottle4} alt="Abdeljalil's family on the olive grove" class="mt-5 lg:mt-10"/>
+      <Image src={from_tree_to_bottle4} alt="Oil extraction process" loading="lazy" class="mt-5 lg:mt-10"/>
   </div>
 <!-- item 4 slut-->
 
@@ -179,7 +179,7 @@ Our careful production process ensures a low acidity, reflecting our commitment 
     <Text>The fresh oil is stored in stainless steel vats for around four days, allowing natural sediment to settle before bottling and delivery.</Text>
   </div>
     <!-- div med heading + text slut -->
-      <Image src={from_tree_to_bottle5} alt="Bottling process of the olive oil" class="lg:order-1 mt-5 lg:mt-0 lg:mr-5"/>
+      <Image src={from_tree_to_bottle5} alt="Bottling process of the olive oil" loading="lazy" class="lg:order-1 mt-5 lg:mt-0 lg:mr-5"/>
   </div>
 </div>
 <!-- item 5 slut-->

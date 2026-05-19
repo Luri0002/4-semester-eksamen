@@ -53,20 +53,20 @@ import ProductSection from "../components/ProductSection.astro";
 <!-- text-picture-text start -->
 <div class="py-5 md:py-10 col-start-1 col-span-6 md:col-start-3 md:col-span-5 lg:col-start-4 lg:col-span-4"> 
 <Text stylingclasses="mb-5 md:mb-10">The story of our olive oil begins with a man: Abdeljalil. Raised with six siblings in the vibrant old town of Marrakesh, he grew up with an insatiable curiosity for the world. That passion led him to become a life science teacher, dedicated to showing how nature evolves and works together. He passed this same spirit to his sons, Marouane and Anas, teaching them to see the world, its people, and its wonders with open minds.</Text>
-<Image src={abdeljalil_2} alt="Picture of Abdeljalil that stands between two olive trees" />
+<Image src={abdeljalil_2} alt="Picture of Abdeljalil that stands between two olive trees" loading="eager" fetchpriority="high"/>
 <Text stylingclasses="mt-5 md:mt-10">Abdeljalil spent much of his free time on the family farm, teaching his children to care for their century old Haouzia olive trees. These trees, unique to Marrakesh's Haouz province, thrive only in this land's particular climate, producing olives with an intense, unmistakable flavor.</Text>
 </div>
 <!-- text-picture-text slut -->
 
 <!-- picture left-sided start-->
 <div class="mb-5 md:-mt-25 lg:-mt-30 col-start-3 col-span-4 md:col-start-9 md:col-span-4 lg:col-start-10 lg:col-span-3"> 
-<Image src={abdeljalil_3} alt="Picture of Abdeljalil and his sons" />
+<Image src={abdeljalil_3} alt="Picture of Abdeljalil and his sons" loading="lazy"/>
 </div>
 <!-- picture left-sided slut-->
 
 <!-- last picture start -->
 <div class="mb-10 md:-mt-132 col-start-1 col-span-6 md:col-start-9 md:col-span-4"> 
-<Image src={abdeljalil_1} alt="Picture of Abdeljalil by an olive oil machine" />
+<Image src={abdeljalil_1} alt="Picture of Abdeljalil by an olive oil machine" loading="lazy"/>
 </div>
 <!-- last picture slut-->
 
@@ -105,6 +105,7 @@ import ProductSection from "../components/ProductSection.astro";
         src={ourwayofcare1}
         alt="picture of vegetables found in the olive grove"
         class="mt-5 lg:mt-10"
+        loading="lazy"
       />
     </div>
     <!-- item 1 slut -->
@@ -126,8 +127,9 @@ import ProductSection from "../components/ProductSection.astro";
       <!-- image -->
       <Image
         src={ourwayofcare2}
-        alt="Abdeljalil's family on the olive grove"
+        alt="farmer picking the olives"
         class="mt-5 lg:mt-10"
+        loading="lazy"
       />
     </div>
     <!-- item 2 slut -->
@@ -151,8 +153,9 @@ import ProductSection from "../components/ProductSection.astro";
         <!-- image -->
         <Image
           src={ourwayofcare3}
-          alt="Olives cleaning and crushing process"
+          alt="Abdeljalil holding some kind of fruit"
           class="mt-5"
+          loading="lazy"
         />
 
       </div>
@@ -176,8 +179,9 @@ import ProductSection from "../components/ProductSection.astro";
       <!-- image -->
       <Image
         src={ourwayofcare4}
-        alt="Abdeljalil's family on the olive grove"
+        alt="sunset on the olive grove"
         class="mt-5 lg:mt-10"
+        loading="lazy"
       />
     </div>
     <!-- item 4 slut -->
@@ -205,23 +209,23 @@ import ProductSection from "../components/ProductSection.astro";
 
     <!-- abdeljalil -->
     <div class="relative mb-32 lg:mb-0">
-    <Image src={Abdeljalil} alt="potrait of abdeljalil" class="mb-2.5 md:mb-5"/>
+    <Image src={Abdeljalil} alt="Abdeljalil" class="mb-2.5 md:mb-5" loading="lazy"/>
     <Heading htmlheading="h3" size="small" font="display">Abdeljalil</Heading>
-    <Image src={Abdeljalil_logo} alt="illustration of abdeljalil" class="absolute top-70 right-5 md:top-70 md:-right-10 -rotate-5"/>
+    <Image src={Abdeljalil_logo} alt="Abdeljalil drawing" class="absolute top-70 right-5 md:top-70 md:-right-10 -rotate-5" loading="lazy"/>
     </div>
 
     <!-- anas -->
     <div class="relative mb-20 lg:mb-0">
-    <Image src={Anas} alt="potrait of anas" class="mb-2.5 md:mb-5"/>
+    <Image src={Anas} alt="Anas" class="mb-2.5 md:mb-5" loading="lazy"/>
     <Heading htmlheading="h3" size="small" font="display">Anas</Heading>
-    <Image src={Anas_logo} alt="illustration of anas" class="absolute -top-14 left-2 md:-top-16 -rotate-5"/>
+    <Image src={Anas_logo} alt="Anas drawing" class="absolute -top-14 left-2 md:-top-16 -rotate-5" loading="lazy"/>
     </div>
 
     <!-- lea -->
     <div class="relative mb-10 lg:mb-0">
-    <Image src={Lea} alt="potrait of lea" class="mb-2.5 md:mb-5"/>
+    <Image src={Lea} alt="Lea" class="mb-2.5 md:mb-5" loading="lazy"/>
     <Heading htmlheading="h3" size="small" font="display">Lea</Heading>
-    <Image src={Lea_logo} alt="illustration of lea" class="absolute top-70 right-5 md:top-70 md:-right-10 rotate-5"/>
+    <Image src={Lea_logo} alt="Lea drawing" class="absolute top-70 right-5 md:top-70 md:-right-10 rotate-5" loading="lazy"/>
     </div>
   
   </div>

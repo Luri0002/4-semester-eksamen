@@ -15,7 +15,7 @@ import FaqItem from "../components/FaqItem.astro";
         <Heading htmlheading="h3" size="medium">All the answers you need</Heading>
       </div>
 
-      <Image src={hero_billede1} alt="Picture of an olive grove" class="hidden md:block mt-5"/>
+      <Image src={hero_billede1} alt="Picture of an olive grove" loading="lazy" class="hidden md:block mt-5"/>
     </div>
     <!-- venstre side slut-->
 
@@ -32,7 +32,7 @@ import FaqItem from "../components/FaqItem.astro";
     <!-- højre side / accordion slut-->
      
     <!-- mobil billede nederst -->
-    <Image src={hero_billede1} alt="Picture of an olive grove" class="col-span-6 mt-5 md:hidden"/>
+    <Image src={hero_billede1} alt="Picture of an olive grove" loading="lazy" class="col-span-6 mt-5 md:hidden"/>
 
   </div>
 </section>
