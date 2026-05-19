@@ -82,22 +82,22 @@ const daysUntilHarvest = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       <section class="px-5 py-10 md:px-10 md:py-20">
         <div class="bg-secondary-500 rounded-3xl grid grid-cols-6 px-5 py-10 gap-2.5 md:px-10 md:py-20 lg:grid-cols-4 md:gap-10">
           <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-1 lg:gap-5">
-            <Image src={gif1} alt="Graphic of the Moroccan sun" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Image src={gif1} alt="Moroccan sun" loading="lazy" class="h-[146.5px] md:h-41.5 w-auto" />
             <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">moroccan sun</Heading>
           </div>
 
           <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-2 lg:gap-5">
-            <Image src={gif2} alt="Graphic of dripping haouzia olives" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Image src={gif2} alt="Dripping haouzia olives" loading="lazy" class="h-[146.5px] md:h-41.5 w-auto" />
             <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">rare HAOZIA OLIVES</Heading>
           </div>
 
           <div class="flex flex-col items-center gap-4 col-start-1 col-span-3 lg:col-3 lg:gap-5">
-            <Image src={gif3} alt="Graphic of a hand with an olive branch" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Image src={gif3} alt="Hand with an olive branch" loading="lazy" class="h-[146.5px] md:h-41.5 w-auto" />
             <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">seasonal work</Heading>
           </div>
 
           <div class="flex flex-col items-center gap-4 col-start-4 col-span-3 lg:col-4 lg:gap-5">
-            <Image src={gif4} alt="Graphic of family tradition" class="h-[146.5px] md:h-41.5 w-auto" />
+            <Image src={gif4} alt="Family tradition" loading="lazy" class="h-[146.5px] md:h-41.5 w-auto" />
             <Heading htmlheading="h5" size="small" color="dark900" font="display" stylingclasses="text-center">family tradition</Heading>
           </div>
         </div>
@@ -108,7 +108,7 @@ const daysUntilHarvest = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       <section id="timeline-section" class="relative md:grid md:grid-cols-2">
         <div class="flex flex-col items-center gap-5 py-10 justify-center md:sticky md:top-0 md:h-screen md:py-0 z-50">
           <Heading htmlheading="h2" size="xlarge">{daysUntilHarvest}</Heading>
-          <Text teksttype="manchet" font="heading">Days until harvest</Text>
+          <Heading htmlheading="h3" size="xsmall">Days until harvest</Heading>
           <div class="flex flex-col items-center gap-2.5">
             <Text>Harvest Window: Oct 25 – Nov 15</Text>
             <Text>Current Stage: Fruit Set</Text>
@@ -116,31 +116,31 @@ const daysUntilHarvest = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
           <Button variant="primary" href="/our_oliveoil">More about our olive oil</Button>
           <!-- Oliven "tidslinjen" på desktop -->
           <div class="olive-icon hidden md:block absolute top-0 left-full -translate-x-1/2 w-16 h-auto pointer-events-none">
-            <Image src={oliven} alt="Grafik af oliven" class="w-full h-auto" />
+            <Image src={oliven} alt="Green olive" loading="lazy" class="w-full h-auto" />
           </div>
           <!-- Oliven "tidslinjen" på desktop stop -->
         </div>
         <ul>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede1.webp')">
-            <TimelineCard graphic={dormancy} graphicAlt="Graphic of the moon and sleep symbols: zzz" stage="Dormancy" season="Mid-Nov – mid-Feb" description="Trees rest and store energy." />
+            <TimelineCard graphic={dormancy} graphicAlt="Moon and sleep symbols: zzz" stage="Dormancy" season="Mid-Nov – mid-Feb" description="Trees rest and store energy." />
           </li>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede2.webp')">
-            <TimelineCard rightaligned={true} graphic={budandflower} graphicAlt="Graphic of small olive buds and flowers" stage="Bud & Flower" season="Mid-Feb – Apr" description="Buds swell; delicate blossoms form." />
+            <TimelineCard rightaligned={true} graphic={budandflower} graphicAlt="Small olive buds and flowers" stage="Bud & Flower" season="Mid-Feb – Apr" description="Buds swell; delicate blossoms form." />
           </li>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede3.webp')">
-            <TimelineCard graphic={fruitset} graphicAlt="Graphic of small olives" stage="Fruit Set" season="May – Jun" description="Tiny olives develop after pollination." />
+            <TimelineCard graphic={fruitset} graphicAlt="Small olives" stage="Fruit Set" season="May – Jun" description="Tiny olives develop after pollination." />
           </li>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede4.webp')">
-            <TimelineCard rightaligned={true} graphic={pithardening} graphicAlt="Graphic of olive pit" stage="Pit Hardening" season="July" description="Stones form inside the olives." />
+            <TimelineCard rightaligned={true} graphic={pithardening} graphicAlt="Olive pit" stage="Pit Hardening" season="July" description="Stones form inside the olives." />
           </li>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede5.webp')">
-            <TimelineCard graphic={flavorsintensify} graphicAlt="Graphic of olive width rising oil contents" stage="Flavors intensify" season="Mid-Feb – Apr" description="Oil content rises; flavors form." />
+            <TimelineCard graphic={flavorsintensify} graphicAlt="Olive width rising oil contents" stage="Flavors intensify" season="Mid-Feb – Apr" description="Oil content rises; flavors form." />
           </li>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede6.webp')">
-            <TimelineCard rightaligned={true} graphic={maturation} graphicAlt="Graphic of the moroccan sun" stage="Maturation" season="Sept – Oct 24" description="Aromas deepen; texture and taste round out." />
+            <TimelineCard rightaligned={true} graphic={maturation} graphicAlt="Moroccan sun" stage="Maturation" season="Sept – Oct 24" description="Aromas deepen; texture and taste round out." />
           </li>
           <li class="flex items-center h-screen w-full bg-cover bg-center sticky top-0 border-t-3 border-dark-700 md:border-l-5 md:border-t-0" style="background-image: url('/timeline_billede7.webp')">
-            <TimelineCard graphic={harvest} graphicAlt="Graphic of the harvest" stage="Harvest" season="Oct 25 – Nov 15" description="Hand-picked within the optimal window." />
+            <TimelineCard graphic={harvest} graphicAlt="The harvest" stage="Harvest" season="Oct 25 – Nov 15" description="Hand-picked within the optimal window." />
           </li>
         </ul>
       </section>

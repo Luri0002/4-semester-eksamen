@@ -13,7 +13,7 @@ import ProductSection from "../components/ProductSection.astro";
 <MainLayout title="Buy Subscribe" description="On this page you can reserve your bottle of Abdeljalil Olive Oil from the upcoming harvest, either as a single purchase or as a subscription with regular deliveries. Experience the authentic taste of Morocco with our hand-picked, seasonal extra virgin olive oil.">
   <main class="">
     <section class="grid grid-cols-6 pb-10 gap-6 md:pb-20 md:grid-cols-12 md:gap-12">
-      <Image src={hero} alt="Product image of Abdeljalil Olive Oil" class="col-start-1 col-span-6 aspect-square md:col-start-1 md:col-span-12 md:aspect-video lg:h-screen md:w-full object-cover lg:col-start-1 lg:col-span-6" />
+      <Image src={hero} alt="Product image of Abdeljalil Olive Oil" class="col-start-1 col-span-6 aspect-square md:col-start-1 md:col-span-12 md:aspect-video lg:h-screen md:w-full object-cover lg:col-start-1 lg:col-span-6" loading="eager"fetchpriority="high" />
 
       <!-- form start -->
       <div class="col-start-1 col-span-6 px-5 flex flex-col gap-6 md:col-start-3 md:col-span-8 md:px-0 lg:gap-8 lg:col-start-7 lg:col-span-6 lg:pr-10 lg:pt-25">
@@ -23,15 +23,15 @@ import ProductSection from "../components/ProductSection.astro";
         </div>
         <ul class="flex flex-col gap-2.5">
           <li class="flex items-start gap-2.5">
-            <Image src={oliven} alt="Graphic of olive" class="w-6 h-auto" />
+            <Image src={oliven} alt="first green olive" class="w-6 h-auto" />
             <Text>Acidity level of less than 0.4% and rich concentration of polyphenols</Text>
           </li>
           <li class="flex items-start gap-2.5">
-            <Image src={oliven} alt="Graphic of olive" class="w-6 h-auto" />
+            <Image src={oliven} alt="second green olive" class="w-6 h-auto" />
             <Text>Shipped from Germany: No customs or import fees within the EU</Text>
           </li>
           <li class="flex items-start gap-2.5">
-            <Image src={oliven} alt="Graphic of olive" class="w-6 h-auto" />
+            <Image src={oliven} alt="third green olive" class="w-6 h-auto" />
             <Text>Subscriber Benefits: Save 10% & Enjoy Always Free Delivery</Text>
           </li>
         </ul>
@@ -71,7 +71,7 @@ import ProductSection from "../components/ProductSection.astro";
 
           <!-- Select: Frequency -->
           <div id="frequency-section" class="flex flex-col gap-2 my-4">
-            <Text>Frequency</Text>
+            <label for="frequency-select"><Text>Frequency</Text></label>
             <select id="frequency-select" class="select select-md md:select-lg w-full rounded-full border border-dark-700 md:border-2 bg-primary-500 pl-4 md:pl-5 text-dark-600 text-lg md:text-xl lg:text-2xl font-heading focus:outline-dark-600 focus:outline">
               <option disabled selected>Delivery every...</option>
               <option>Every 1 month</option>

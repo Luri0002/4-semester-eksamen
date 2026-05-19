@@ -5,7 +5,7 @@ import Heading from "../components/Heading.astro";
 ---
 
 <div class="flex flex-col items-center gap-10">
-  <Image src={image} alt={heading} />
+  <Image src={image} alt={`${heading} bottle`} loading="lazy"/>
 
   <Heading htmlheading="h4" size="small" font="display" color={color}>
     {heading}
@@ -13,7 +13,7 @@ import Heading from "../components/Heading.astro";
 
   {
     olives.map((olive, index) => (
-      <img src={olive.src} alt={`olive ${index + 1}`} />
+      <Image src={olive} alt="" loading="lazy" />
     ))
   }
 </div>

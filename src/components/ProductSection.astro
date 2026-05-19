@@ -23,17 +23,17 @@ import Button from "../components/Button.astro";
   <!-- Billede 1 (Aktivt fra start) -->
   <div class={`relative w-full overflow-hidden ${imageFirst ? "md:order-1" : "md:order-2"}`}>
     <div class="product-bg transition-opacity duration-800 opacity-100 z-0">
-      <Image src={produkt_billede1} alt="Product Image" class="object-cover w-full h-full" />
+      <Image src={produkt_billede1} alt="Product image with olives in the background" loading="lazy" class="object-cover w-full h-full" />
     </div>
 
     <!-- Billede 2 (Skjult) -->
     <div class="product-bg absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
-      <Image src={produkt_billede2} alt="Product Image" class="object-cover w-full h-full" />
+      <Image src={produkt_billede2} alt="Product image with the grove in the background" loading="lazy" class="object-cover w-full h-full" />
     </div>
 
     <!-- Billede 3 (Skjult) -->
     <div class="product-bg absolute inset-0 transition-opacity duration-800 opacity-0 z-0">
-      <Image src={produkt_billede3} alt="Product Image" class="object-cover w-full h-full" />
+      <Image src={produkt_billede3} alt="Product image with the harvest in the background" loading="lazy" class="object-cover w-full h-full" />
     </div>
   </div>
 </section>
